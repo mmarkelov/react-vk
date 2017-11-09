@@ -26,6 +26,10 @@
       "git add"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmarkelov/react-vk"
+  },
   "peerDependencies": {
     "react": "^0.14.9 || ^15.3.0 || ^16.0.0"
   },
