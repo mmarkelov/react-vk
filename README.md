@@ -1,6 +1,6 @@
 # react-vk
 
-[VK API](https://vk.com/dev/widgets_for_sites/)
+[VK API](https://vk.com/dev/widgets_for_sites)
 bindings for React
 
 ## Install
