@@ -18,6 +18,7 @@ export class CommunityMessages extends React.Component {
       disableExpandChatSound: PropTypes.number,
       disableTitleChange: PropTypes.number,
     }),
+    onMount: PropTypes.func,
   };
 
   static defaultProps = {
@@ -31,6 +32,7 @@ export class CommunityMessages extends React.Component {
       buttonType: 'blue_circle',
       disableButtonTooltip: 0,
     },
+    onMount: () => {},
   };
 
   state = {
@@ -38,19 +40,14 @@ export class CommunityMessages extends React.Component {
   };
 
   componentDidMount() {
-    const { vk, elementId, groupId, options } = this.props;
+    const { vk, elementId, groupId, options, onMount } = this.props;
     const widget = vk.Widgets.CommunityMessages(elementId, groupId, options);
     this.setState({ widget: widget });
+    onMount(widget, elementId);
   }
 
   render() {
-    const { widget } = this.state;
-    const { elementId, expand } = this.props;
-    if (this.props.destroy) {
-      widget.destroy(elementId);
-    }
-    if (expand && widget) widget.expand();
-    if (!expand && widget) widget.minimize();
+    const { elementId } = this.props;
     return <div id={elementId} />;
   }
 }

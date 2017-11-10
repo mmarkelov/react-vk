@@ -8,10 +8,10 @@ export class Recommended extends React.Component {
       limit: PropTypes.number,
       max: PropTypes.number,
       period: PropTypes.string,
+      verb: PropTypes.number,
+      sort: PropTypes.string,
+      target: PropTypes.string,
     }),
-    verb: PropTypes.number,
-    sort: PropTypes.string,
-    target: PropTypes.string,
   };
 
   static defaultProps = {
@@ -20,14 +20,14 @@ export class Recommended extends React.Component {
       limit: 5,
       max: 20,
       period: 'week',
+      sort: 'friend_like',
+      target: 'parent',
     },
-    sort: 'friend_like',
-    target: 'parent',
   };
 
   mount() {
-    const { vk, elementId, options, verb, sort, target } = this.props;
-    vk.Widgets.Recommended(elementId, options, verb, sort, target);
+    const { vk, elementId, options } = this.props;
+    vk.Widgets.Recommended(elementId, options);
   }
 
   componentDidMount() {

@@ -24,10 +24,7 @@ export class Auth extends React.Component {
     let copy = { ...options };
     copy.onAuth = (uid, first_name, last_name, photo, photo_rec, hash) =>
       options.onAuth(uid, first_name, last_name, photo, photo_rec, hash);
-    // options.onAuth = (uid, first_name, last_name, photo, photo_rec, hash) =>
-    //   options.onAuth(uid, first_name, last_name, photo, photo_rec, hash);
     vk.Widgets.Auth(elementId, copy);
-    // vk.Observer.subscribe('widgets.comments.delete_comment', onDeleteComment);
   }
 
   componentDidMount() {

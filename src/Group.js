@@ -15,7 +15,6 @@ export class Group extends React.Component {
       color3: PropTypes.string,
       pageImage: PropTypes.string,
     }),
-    pageId: PropTypes.number,
     onJoin: PropTypes.func,
     onLeave: PropTypes.func,
   };
