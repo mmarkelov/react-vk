@@ -35,14 +35,9 @@ export class CommunityMessages extends React.Component {
     onMount: () => {},
   };
 
-  state = {
-    widget: null,
-  };
-
   componentDidMount() {
     const { vk, elementId, groupId, options, onMount } = this.props;
     const widget = vk.Widgets.CommunityMessages(elementId, groupId, options);
-    this.setState({ widget: widget });
     onMount(widget, elementId);
   }
 

@@ -11,14 +11,17 @@ yarn add react-vk
 ```
 
 ## Important note!
-For local projects run your server on port 80
+For local projects run your server on port 80 (This is VK API requirement for local projects)
 For example using create-react-app in your package.json:
+```js
 "start": "PORT=80 react-scripts start"
+```
+
 Then:
 ```shell
 sudo npm run start
 ```
-You need run this command as administrator
+You need run this command as administrator!
 
 ## Components
 
@@ -41,6 +44,8 @@ You need run this command as administrator
 - `<Subscribe />` - Subscribe Widget instance
 
 #### Information about components
+
+Every component has options object, which contains parameters (You can find available fields on VK API for selected widget)
 
 - `<VK apiId={number} onApiAvailable={function}/>`
 requires apiId for init VK. More information on [VK API](https://vk.com/dev/openapi)
