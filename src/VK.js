@@ -19,13 +19,14 @@ export class VK extends React.Component {
 
   state = {
     vk: null,
-    isLoaded: false,
   };
+
+  _mounted = true;
 
   componentDidMount() {
     const { onApiAvailable } = this.props;
     if (document.getElementById('vk-jssdk')) {
-      return;
+      this._mounted && this.setState({ vk: window.VK });
     }
 
     if (
@@ -38,10 +39,10 @@ export class VK extends React.Component {
       this.init()
         .then(api => {
           onApiAvailable(api);
-          this.setState({ vk: api, isLoaded: true });
+          this._mounted && this.setState({ vk: api });
         })
         .catch(err => {
-          throw new Error('Error during response.');
+          throw new Error(err);
         });
     }
   }
@@ -91,13 +92,17 @@ export class VK extends React.Component {
     return this.loadingPromise;
   }
 
+  componentWillUnmount() {
+    this.isLoaded = false;
+  }
+
   render() {
-    const { vk, isLoaded } = this.state;
+    const { vk } = this.state;
     const childrenWithProps = React.Children.map(this.props.children, child =>
       React.cloneElement(child, {
         vk: vk,
       })
     );
-    return isLoaded ? <div>{childrenWithProps}</div> : null;
+    return vk ? <div>{childrenWithProps}</div> : null;
   }
 }

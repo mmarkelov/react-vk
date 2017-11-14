@@ -1,6 +1,6 @@
 {
   "name": "react-vk",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "VK API bindings for React",
   "main": "main/index.js",
   "module": "es/index.js",
