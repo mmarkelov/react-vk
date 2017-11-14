@@ -84,7 +84,7 @@ export class VK extends React.Component {
       }
 
       this.fetchScript(
-        `https://vk.com/js/api/openapi.js?${options.version}`,
+        `https://vk.com/js/api/openapi.js?${options.version}`
       ).catch(reject);
     });
 
@@ -96,8 +96,8 @@ export class VK extends React.Component {
     const childrenWithProps = React.Children.map(this.props.children, child =>
       React.cloneElement(child, {
         vk: vk,
-      }),
+      })
     );
-    return isLoaded ? childrenWithProps : null;
+    return isLoaded ? <div>{childrenWithProps}</div> : null;
   }
 }
