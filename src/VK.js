@@ -93,7 +93,7 @@ export class VK extends React.Component {
   }
 
   componentWillUnmount() {
-    this.isLoaded = false;
+    this._mounted = false;
   }
 
   render() {
