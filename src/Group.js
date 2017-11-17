@@ -42,6 +42,12 @@ export class Group extends React.Component {
     this.mount();
   }
 
+  componentWillUnmount() {
+    const { vk } = this.props;
+    vk.Observer.unsubscribe('widgets.groups.joined');
+    vk.Observer.unsubscribe('widgets.groups.leaved');
+  }
+
   render() {
     const { elementId } = this.props;
     return <div id={elementId} />;

@@ -54,13 +54,19 @@ export class Comments extends React.Component {
     vk.Observer.subscribe(
       'widgets.comments.new_comment',
       (num, last_comment, date, sign) =>
-        onNewComment(num, last_comment, date, sign),
+        onNewComment(num, last_comment, date, sign)
     );
     vk.Observer.subscribe('widgets.comments.delete_comment', onDeleteComment);
   }
 
   componentDidMount() {
     this.mount();
+  }
+
+  componentWillUnmount() {
+    const { vk } = this.props;
+    vk.Observer.unsubscribe('widgets.comments.new_comment');
+    vk.Observer.unsubscribe('widgets.comments.delete_comment');
   }
 
   render() {

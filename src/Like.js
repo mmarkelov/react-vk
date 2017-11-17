@@ -60,6 +60,14 @@ export class Like extends React.Component {
     this.mount();
   }
 
+  componentWillUnmount() {
+    const { vk } = this.props;
+    vk.Observer.unsubscribe('widgets.like.liked');
+    vk.Observer.unsubscribe('widgets.like.unliked');
+    vk.Observer.unsubscribe('widgets.like.shared');
+    vk.Observer.unsubscribe('widgets.like.unshared');
+  }
+
   render() {
     const { elementId } = this.props;
     return <div id={elementId} />;

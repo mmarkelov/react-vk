@@ -26,15 +26,20 @@ export class AllowMessagesFromCommunity extends React.Component {
     vk.Widgets.AllowMessagesFromCommunity(elementId, options, groupId);
     vk.Observer.subscribe(
       'widgets.allowMessagesFromCommunity.allowed',
-      userId => onAllow(userId),
+      userId => onAllow(userId)
     );
     vk.Observer.subscribe('widgets.allowMessagesFromCommunity.denied', userId =>
-      onDeny(userId),
+      onDeny(userId)
     );
   }
 
   componentDidMount() {
     this.mount();
+  }
+
+  componentWillUnmount() {
+    const { vk } = this.props;
+    vk.Observer.unsubscribe('widgets.allowMessagesFromCommunity.allowed');
   }
 
   render() {

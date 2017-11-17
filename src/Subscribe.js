@@ -41,6 +41,12 @@ export class Subscribe extends React.Component {
     this.mount();
   }
 
+  componentWillUnmount() {
+    const { vk } = this.props;
+    vk.Observer.unsubscribe('widgets.subscribed');
+    vk.Observer.unsubscribe('widgets.unsubscribed');
+  }
+
   render() {
     const { elementId } = this.props;
     return <div id={elementId} />;
