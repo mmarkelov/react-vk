@@ -166,8 +166,9 @@ window.onload = function () {
 import { VK } from 'react-vk';
 
 const App = () => (
-  <VK apiId={123456}>
-  </VK>
+  return (
+    <VK apiId={123456}/>
+  )
 );
 ```
 
@@ -188,9 +189,11 @@ window.onload = function () {
 import { VK, Auth } from 'react-vk';
 
 const App = () => (
-  <VK apiId={123456}>
-    <Auth />
-  </VK>
+  return (
+    <VK apiId={123456}>
+      <Auth />
+    </VK>
+  )
 );
 ```
 
@@ -216,15 +219,17 @@ const App = () => (
 ### With react-vk
 
 ```js
-import { VK, Auth } from 'react-vk';
+import { VK, Subscribe } from 'react-vk';
 
 const App = () => (
-  <VK apiId={123456}>
-    <Subscribe
-      ownerId={17437657}
-      onSubscribe={()=> {alert('Thank you!');}}
-    />
-  </VK>
+  return (
+    <VK apiId={123456}>
+      <Subscribe
+        ownerId={17437657}
+        onSubscribe={()=> {alert('Thank you!');}}
+      />
+    </VK>
+  )
 );
 ```
 
@@ -276,4 +281,17 @@ class App extends Component {
 
 ```
 
-More details and examples coming soon
+##More details and examples
+You can clone this repository and check more examples
+```shell
+git clone https://github.com/mmarkelov/react-vk.git
+cd ./react-vk
+npm install && npm run examples
+```
+
+Also you can check them [here](https://mmarkelov.github.io/react-vk/)
+
+##Acknowledgements
+Thanks to [@gribnoysup](https://github.com/gribnoysup/) and his [react-yandex-maps](https://github.com/gribnoysup/react-yandex-maps) for inspiration and motivation
+Thanks to [@seeden](https://github.com/seeden/) and his [react-facebook](https://github.com/gribnoysup/react-yandex-maps) for inspiration and motivation
+Lots of features were founded in this perfect packages

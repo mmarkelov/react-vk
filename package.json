@@ -1,6 +1,6 @@
 {
   "name": "react-vk",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "VK API bindings for React",
   "main": "main/index.js",
   "module": "es/index.js",
@@ -15,10 +15,13 @@
     "prepublish": "npm run build",
     "precommit": "lint-staged",
     "build": "NODE_ENV=production node ./tools/build.js",
+    "examples": "webpack-dev-server --config ./examples/webpack.config.js",
+    "build:examples": "rm -rf ./examples/build && NODE_ENV=production webpack -p --config ./examples/webpack.config.js",
     "dev": "babel src -w -d main --ignore __tests__",
     "prettier": "npm run prettier:src && npm run prettier:examples",
     "prettier:src": "prettier --single-quote --trailing-comma es5 --write \"./src/**/*.js\"",
-    "prettier:staged": "prettier --single-quote --trailing-comma es5 --write"
+    "prettier:staged": "prettier --single-quote --trailing-comma es5 --write",
+    "publish:examples": "npm run build:examples && gh-pages -d ./examples/build"
   },
   "lint-staged": {
     "*.js": [
@@ -45,6 +48,7 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-1": "^6.22.0",
     "brace": "^0.10.0",
+    "css-loader": "^0.28.7",
     "eslint": "^3.8.1",
     "eslint-config-react-app": "^0.5.1",
     "eslint-plugin-flowtype": "^2.21.0",
@@ -72,6 +76,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "source-map-loader": "^0.1.6",
+    "style-loader": "^0.19.0",
     "styled-components": "^2.2.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
