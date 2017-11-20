@@ -281,7 +281,7 @@ class App extends Component {
 
 ```
 
-##More details and examples
+## More details and examples
 You can clone this repository and check more examples
 ```shell
 git clone https://github.com/mmarkelov/react-vk.git
@@ -291,7 +291,7 @@ npm install && npm run examples
 
 Also you can check them [here](https://mmarkelov.github.io/react-vk/)
 
-##Acknowledgements
-Thanks to [@gribnoysup](https://github.com/gribnoysup/) and his [react-yandex-maps](https://github.com/gribnoysup/react-yandex-maps) for inspiration and motivation
-Thanks to [@seeden](https://github.com/seeden/) and his [react-facebook](https://github.com/gribnoysup/react-yandex-maps) for inspiration and motivation
-Lots of features were founded in this perfect packages
+## Acknowledgements
+- Thanks to [@gribnoysup](https://github.com/gribnoysup/) and his [react-yandex-maps](https://github.com/gribnoysup/react-yandex-maps) for inspiration and motivation.
+- Thanks to [@seeden](https://github.com/seeden/) and his [react-facebook](https://github.com/gribnoysup/react-yandex-maps) for inspiration and motivation.
+- Lots of features were founded in these perfect packages.

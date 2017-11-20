@@ -6,7 +6,7 @@ const Home = () => {
     <div className="App-content">
       <h2>To get started</h2>
       <ol>
-        <li>Setup your project and get your Api id</li>
+        <li>Setup your project and get your Application ID</li>
         <img src={getApi} alt="get your api id" />
         <li>
           Install{' '}

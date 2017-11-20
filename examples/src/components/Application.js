@@ -6,7 +6,7 @@ const App = () => {
     <div className="App-content">
       <h2>App Component</h2>
       <h4>To use App Widget:</h4>
-      <pre style={{ width: '55%' }}>
+      <pre style={{ width: '60%' }}>
         {`
 import {VK, Application} from 'react-vk';
 

@@ -16,7 +16,7 @@ class CommunityMessage extends React.Component {
       <div className="App-content">
         <h2>Community Messages Component</h2>
         <h4>To use Community Messages Widget:</h4>
-        <pre style={{ width: '95%' }}>
+        <pre style={{ width: '70%' }}>
           {`
 import {VK, CommunityMessages} from 'react-vk';
 
@@ -34,13 +34,16 @@ class Messages extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.handleClick}>Delete CommunityMessages</button>
+                <button onClick={this.handleClick}>
+                    Delete CommunityMessages
+                </button>
                 <VK apiId={your_api_id}>
                   <CommunityMessages
                     groupId={127607773}
-                    options={{onCanNotWrite: reason => console.log(reason)}}
+                    options={{onCanNotWrite:
+                        reason => console.log(reason)}}
                     onMount={(widget, id) => {
-                      this.setState({ widget, id });
+                        this.setState({ widget, id });
                     }}
                   />
                 </VK>
