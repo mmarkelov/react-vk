@@ -6,7 +6,7 @@ const PostWidget = () => {
     <div className="App-content">
       <h2>Post Component</h2>
       <h4>To use Post Widget:</h4>
-      <pre style={{ width: '65%' }}>
+      <pre style={{ width: '70%' }}>
         {`
 import {VK, Post} from 'react-vk';
 

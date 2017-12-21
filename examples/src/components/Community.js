@@ -6,7 +6,7 @@ const Community = () => {
     <div className="App-content">
       <h2>Community Component</h2>
       <h4>To use Community Widget:</h4>
-      <pre style={{ width: '50%' }}>
+      <pre style={{ width: '60%' }}>
         {`
 import {VK, Group} from 'react-vk';
 

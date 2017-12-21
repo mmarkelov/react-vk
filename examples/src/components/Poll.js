@@ -6,7 +6,7 @@ const PollWidget = () => {
     <div className="App-content">
       <h2>Poll Component</h2>
       <h4>To use Polls Widget:</h4>
-      <pre style={{ width: '65%' }}>
+      <pre style={{ width: '80%' }}>
         {`
 import {VK, Poll} from 'react-vk';
 

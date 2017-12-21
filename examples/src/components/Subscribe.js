@@ -14,7 +14,7 @@ const SubscribeToAuthor = () => {
     <div className="App-content">
       <h2>Subscribe to Author Component</h2>
       <h4>To use Subscribe to Author Widget:</h4>
-      <pre style={{ width: '65%' }}>
+      <pre style={{ width: '70%' }}>
         {`
 import {VK, Subscribe} from 'react-vk';
 

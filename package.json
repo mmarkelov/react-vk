@@ -1,6 +1,6 @@
 {
   "name": "react-vk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "VK API bindings for React",
   "main": "main/index.js",
   "module": "es/index.js",
@@ -86,7 +86,8 @@
     "react-component",
     "vk",
     "react-vk",
-    "vk-api"
+    "vk-api",
+    "react-vk-api"
   ],
   "author": "Maksim Markelov <mapkeji26@gmail.com>",
   "license": "MIT"
