@@ -25,7 +25,7 @@ export class VK extends React.Component {
 
   componentDidMount() {
     const { onApiAvailable } = this.props;
-    if (document.getElementById('vk-jssdk')) {
+    if (document.getElementById('vk-openapi')) {
       this._mounted && this.setState({ vk: window.VK });
     }
 
@@ -55,7 +55,7 @@ export class VK extends React.Component {
       el.type = 'text/javascript';
       el.src = url;
       el.async = true;
-      el.id = 'vk-jssdk';
+      el.id = 'vk-openapi';
       document.getElementsByTagName('head')[0].appendChild(el);
     });
   };
@@ -80,7 +80,7 @@ export class VK extends React.Component {
         resolve(window.VK);
       };
 
-      if (document.getElementById('vk-jssdk')) {
+      if (document.getElementById('vk-openapi')) {
         return;
       }
 
