@@ -1,0 +1,36 @@
+{
+  "name": "react-vk",
+  "version": "1.1.1",
+  "description": "VK API bindings for React",
+  "scripts": {
+    "build:examples": "rm -rf ./examples/build && webpack --mode production",
+    "publish:examples": "npm run build:examples && gh-pages -d ./build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmarkelov/react-vk"
+  },
+  "author": "Maksim Markelov <mapkeji26@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "gh-pages": "^1.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.1.0",
+    "mini-css-extract-plugin": "^0.2.0",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13"
+  }
+}
