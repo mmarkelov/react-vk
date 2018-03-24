@@ -1,0 +1,108 @@
+.App-header {
+  text-align: center;
+  background-color: #4c75a3;
+  height: 100px;
+  padding: 20px;
+  color: white;
+}
+
+h4 {
+  margin: 20px;
+}
+
+h5 {
+  font-weight: 400;
+  text-align: center;
+  margin: 30px;
+}
+
+.App-main {
+  min-height: 800px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row;
+}
+
+nav {
+  width: 215px;
+  height: 525px;
+  padding: 14px 0;
+  word-wrap: break-word;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  margin: 4px;
+  flex: 1 0 25%;
+  order: 1;
+}
+
+nav li {
+  margin: 20px;
+  list-style-type: none;
+}
+
+.active {
+  text-decoration: underline;
+  color: #999;
+}
+
+.App-content {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  color: #000;
+  margin: 4px;
+  padding: 5px;
+  flex: 1 1 75%;
+  order: 2;
+  position: relative;
+}
+
+.App-content > h2 {
+  text-align: center;
+}
+
+.App-content li {
+  margin: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #666;
+}
+
+.App-content pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 1.5em;
+  width: 70%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.App-content .hljs-keyword {
+  color: #859900;
+}
+
+footer {
+  margin: 20px;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #edeef0;
+}
