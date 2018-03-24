@@ -43,13 +43,13 @@ const components = [
 ];
 
 const NotFound = asyncComponent(() =>
-  System.import('./components/NotFound').then(module => module.default)
+  import('./components/NotFound').then(module => module.default)
 );
 
 const App = () => {
   const renderRoutes = item => {
     const component = asyncComponent(() =>
-      System.import(`./components/${item.title}`).then(module => module.default)
+      import(`./components/${item.title}`).then(module => module.default)
     );
 
     return (

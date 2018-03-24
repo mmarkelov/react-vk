@@ -293,5 +293,5 @@ Also you can check them [here](https://mmarkelov.github.io/react-vk/)
 
 ## Acknowledgements
 - Thanks to [@gribnoysup](https://github.com/gribnoysup/) and his [react-yandex-maps](https://github.com/gribnoysup/react-yandex-maps) for inspiration and motivation.
-- Thanks to [@seeden](https://github.com/seeden/) and his [react-facebook](https://github.com/gribnoysup/react-yandex-maps) for inspiration and motivation.
+- Thanks to [@seeden](https://github.com/seeden/) and his [react-facebook](https://github.com/seeden/react-facebook) for inspiration and motivation.
 - Lots of features were founded in these perfect packages.

@@ -1,41 +1,26 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const examples = path.resolve(process.cwd(), 'examples');
-const sandbox = path.join(examples, 'src', 'sandbox');
+const reactVK = path.resolve('../src');
 
-const reactVK = path.resolve(process.cwd(), 'src');
-
-const devServer = process.argv[1].indexOf('webpack-dev-server') !== -1;
-
-const vendor = ['react', 'react-dom', 'styled-components'];
-
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const vendor = ['react', 'react-dom'];
 
 module.exports = {
-  devtool: NODE_ENV === 'development' ? 'source-map' : '',
-
-  devServer: {
-    historyApiFallback: true,
-    port: 3000,
-  },
-
   entry: {
     vendor: vendor,
-    index: examples + '/src/index.js',
+    index: './src/index.js',
   },
 
   resolve: {
     alias: {
       'react-vk': reactVK,
-      sandbox: sandbox,
     },
   },
 
   output: {
-    path: examples + '/build',
-    publicPath: devServer ? '/' : '/react-vk/',
+    path: __dirname + '/build',
+    publicPath: '/react-vk/',
     filename: 'static/js/[name].[chunkhash:8].js',
   },
 
@@ -43,14 +28,17 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        enforce: 'pre',
-        exclude: /node_modules/,
-        use: [{ loader: 'source-map-loader' }],
-      },
-      {
-        test: /\.js$/,
         exclude: /node_modules/,
         use: [{ loader: 'babel-loader' }],
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: { minimize: true },
+          },
+        ],
       },
       {
         test: /\.(gif|png|svg|jpe?g)$/,
@@ -64,27 +52,20 @@ module.exports = {
         ],
       },
       {
-        test: /\.json$/,
-        use: [{ loader: 'json-loader' }],
-      },
-      {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest'],
-      minChunks: Infinity,
-    }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-    }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: examples + '/public/index.html',
+      template: './public/index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
   ],
 };

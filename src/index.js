@@ -1,5 +1,4 @@
 export { VK } from './VK';
-
 export { Auth } from './Auth';
 export { Comments } from './Comments';
 export { CommentsBrowse } from './CommentsBrowse';
