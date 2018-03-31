@@ -1,6 +1,7 @@
 {
   "name": "react-vk",
-  "version": "1.1.5",
+  "private": false,
+  "version": "1.1.6",
   "main": "build/index.js",
   "description": "VK API bindings for React",
   "files": [
@@ -10,7 +11,19 @@
   ],
   "scripts": {
     "build": "babel src -d build",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "prettier": "prettier --write",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/*.js": [
+      "npm run prettier",
+      "git add"
+    ],
+    "*.md": [
+      "npm run prettier",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -22,13 +35,23 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
+    "babel-eslint": "^8.2.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.46.1",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.1",
+    "prettier": "^1.11.1",
     "prop-types": "^15.6.1",
-    "react": "^16.2.0"
+    "react": "^16.3.0"
   },
   "keywords": [
     "react",

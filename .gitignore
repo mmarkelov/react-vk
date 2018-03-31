@@ -8,3 +8,4 @@ examples/build
 !.gitignore
 !.babelrc
 !.eslintrc
+!.eslintrc.json

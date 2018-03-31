@@ -1,37 +1,37 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 export class VK extends React.Component {
   static propTypes = {
     apiId: PropTypes.number.isRequired,
     options: PropTypes.shape({
-      version: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      version: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
     }),
-    onApiAvailable: PropTypes.func,
+    onApiAvailable: PropTypes.func
   };
 
   static defaultProps = {
     options: {
-      version: 152,
+      version: 152
     },
-    onApiAvailable: () => {},
+    onApiAvailable: () => {}
   };
 
   state = {
-    vk: null,
+    vk: null
   };
 
   _mounted = true;
 
   componentDidMount() {
     const { onApiAvailable } = this.props;
-    if (document.getElementById('vk-openapi')) {
+    if (document.getElementById("vk-openapi")) {
       this._mounted && this.setState({ vk: window.VK });
     }
 
     if (
       !!(
-        typeof window !== 'undefined' &&
+        typeof window !== "undefined" &&
         window.document &&
         window.document.createElement
       )
@@ -49,14 +49,14 @@ export class VK extends React.Component {
 
   fetchScript = url => {
     return new Promise((resolve, reject) => {
-      const el = document.createElement('script');
+      const el = document.createElement("script");
       el.onload = resolve;
       el.onerror = reject;
-      el.type = 'text/javascript';
+      el.type = "text/javascript";
       el.src = url;
       el.async = true;
-      el.id = 'vk-openapi';
-      document.getElementsByTagName('head')[0].appendChild(el);
+      el.id = "vk-openapi";
+      document.getElementsByTagName("head")[0].appendChild(el);
     });
   };
 
@@ -69,18 +69,18 @@ export class VK extends React.Component {
       const { apiId, options } = this.props;
 
       if (!apiId) {
-        throw new Error('You need to set apiId');
+        throw new Error("You need to set apiId");
       }
 
       window.vkAsyncInit = () => {
         window.VK.init({
-          apiId: apiId,
+          apiId: apiId
         });
 
         resolve(window.VK);
       };
 
-      if (document.getElementById('vk-openapi')) {
+      if (document.getElementById("vk-openapi")) {
         return;
       }
 
@@ -100,9 +100,9 @@ export class VK extends React.Component {
     const { vk } = this.state;
     const childrenWithProps = React.Children.map(this.props.children, child =>
       React.cloneElement(child, {
-        vk: vk,
+        vk: vk
       })
     );
-    return vk ? <div>{childrenWithProps}</div> : null;
+    return vk ? <React.Fragment>{childrenWithProps}</React.Fragment> : null;
   }
 }

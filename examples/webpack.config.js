@@ -6,10 +6,24 @@ const reactVK = path.resolve('../src');
 
 const vendor = ['react', 'react-dom'];
 
+const isDebug = process.argv[1].indexOf('webpack-dev-server') !== -1;
+
 module.exports = {
+  devServer: {
+    open: true,
+    compress: true,
+    port: 3000,
+  },
+
   entry: {
     vendor: vendor,
     index: './src/index.js',
+  },
+
+  output: {
+    path: __dirname + '/build',
+    publicPath: isDebug ? '/' : '/react-vk/',
+    filename: isDebug ? '[name].js' : 'static/js/[name].[chunkhash:8].js',
   },
 
   resolve: {
@@ -18,11 +32,7 @@ module.exports = {
     },
   },
 
-  output: {
-    path: __dirname + '/build',
-    publicPath: '/react-vk/',
-    filename: 'static/js/[name].[chunkhash:8].js',
-  },
+  cache: isDebug,
 
   module: {
     rules: [
