@@ -1,19 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-export class Playlist extends React.Component {
+export default class Playlist extends React.Component {
   static propTypes = {
     elementId: PropTypes.string,
     ownerId: PropTypes.number.isRequired,
     playlistId: PropTypes.number.isRequired,
     hash: PropTypes.string.isRequired,
     options: PropTypes.shape({
-      width: PropTypes.number,
-    }),
+      width: PropTypes.number
+    })
   };
 
   static defaultProps = {
-    elementId: 'vk_playlist',
+    elementId: "vk_playlist"
   };
 
   mount() {

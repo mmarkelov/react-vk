@@ -1,18 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-export class Application extends React.Component {
+export default class Application extends React.Component {
   static propTypes = {
     elementId: PropTypes.string,
     appId: PropTypes.number.isRequired,
     options: PropTypes.shape({
       mode: PropTypes.number,
-      height: PropTypes.number,
-    }),
+      height: PropTypes.number
+    })
   };
 
   static defaultProps = {
-    elementId: 'vk_app',
+    elementId: "vk_app"
   };
 
   mount() {

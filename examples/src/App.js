@@ -43,13 +43,13 @@ const components = [
 ];
 
 const NotFound = asyncComponent(() =>
-  import('./components/NotFound').then(module => module.default)
+  import('./components/NotFound').then(module => module.default),
 );
 
 const App = () => {
   const renderRoutes = item => {
     const component = asyncComponent(() =>
-      import(`./components/${item.title}`).then(module => module.default)
+      import(`./components/${item.title}`).then(module => module.default),
     );
 
     return (
@@ -75,7 +75,7 @@ const App = () => {
             Done by{' '}
             <b>
               <a href="https://github.com/mmarkelov">mmarkelov</a>
-            </b>, 2017
+            </b>, 2018
           </p>
         </footer>
       </div>

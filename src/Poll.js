@@ -1,21 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-export class Poll extends React.Component {
+export default class Poll extends React.Component {
   static propTypes = {
     elementId: PropTypes.string,
     options: PropTypes.shape({
       width: PropTypes.number,
-      pageUrl: PropTypes.string,
+      pageUrl: PropTypes.string
     }),
-    pollId: PropTypes.string.isRequired,
+    pollId: PropTypes.string.isRequired
   };
 
   static defaultProps = {
-    elementId: 'vk_poll',
+    elementId: "vk_poll",
     options: {
-      height: 24,
-    },
+      height: 24
+    }
   };
 
   mount() {

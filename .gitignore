@@ -3,6 +3,7 @@ main
 node_modules
 umd
 examples/build
+build
 
 .*
 !.gitignore

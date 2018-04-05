@@ -1,7 +1,7 @@
 {
   "name": "react-vk",
   "private": false,
-  "version": "1.1.6",
+  "version": "1.1.7",
   "main": "build/index.js",
   "description": "VK API bindings for React",
   "files": [
@@ -48,10 +48,10 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
-    "lint-staged": "^7.0.1",
+    "lint-staged": "^7.0.4",
     "prettier": "^1.11.1",
     "prop-types": "^15.6.1",
-    "react": "^16.3.0"
+    "react": "^16.3.1"
   },
   "keywords": [
     "react",

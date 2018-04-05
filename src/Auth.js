@@ -1,22 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-export class Auth extends React.Component {
+export default class Auth extends React.Component {
   static propTypes = {
     elementId: PropTypes.string,
     options: PropTypes.shape({
       width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      authUrl: PropTypes.string,
+      authUrl: PropTypes.string
     }),
-    onAuth: PropTypes.func,
+    onAuth: PropTypes.func
   };
 
   static defaultProps = {
-    elementId: 'vk_auth',
+    elementId: "vk_auth",
     options: {
       width: 300,
-      onAuth: () => {},
-    },
+      onAuth: () => {}
+    }
   };
 
   mount() {

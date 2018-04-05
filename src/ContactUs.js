@@ -1,21 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-export class ContactUs extends React.Component {
+export default class ContactUs extends React.Component {
   static propTypes = {
     elementId: PropTypes.string,
     options: PropTypes.shape({
       text: PropTypes.string,
-      height: PropTypes.number,
+      height: PropTypes.number
     }),
-    ownerId: PropTypes.number.isRequired,
+    ownerId: PropTypes.number.isRequired
   };
 
   static defaultProps = {
-    elementId: 'vk_contact_us',
+    elementId: "vk_contact_us",
     options: {
-      height: 24,
-    },
+      height: 24
+    }
   };
 
   mount() {

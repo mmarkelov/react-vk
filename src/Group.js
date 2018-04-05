@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-export class Group extends React.Component {
+export default class Group extends React.Component {
   static propTypes = {
     elementId: PropTypes.string,
     groupId: PropTypes.number.isRequired,
@@ -13,29 +13,29 @@ export class Group extends React.Component {
       color1: PropTypes.string,
       color2: PropTypes.string,
       color3: PropTypes.string,
-      pageImage: PropTypes.string,
+      pageImage: PropTypes.string
     }),
     onJoin: PropTypes.func,
-    onLeave: PropTypes.func,
+    onLeave: PropTypes.func
   };
 
   static defaultProps = {
-    elementId: 'vk_groups',
+    elementId: "vk_groups",
     options: {
-      width: 'auto',
+      width: "auto",
       mode: 3,
       no_cover: 1,
-      wide: 1,
+      wide: 1
     },
     onJoin: () => {},
-    onLeave: () => {},
+    onLeave: () => {}
   };
 
   mount() {
     const { vk, elementId, options, groupId, onJoin, onLeave } = this.props;
     vk.Widgets.Group(elementId, options, groupId);
-    vk.Observer.subscribe('widgets.groups.joined', onJoin);
-    vk.Observer.subscribe('widgets.groups.leaved', onLeave);
+    vk.Observer.subscribe("widgets.groups.joined", onJoin);
+    vk.Observer.subscribe("widgets.groups.leaved", onLeave);
   }
 
   componentDidMount() {
@@ -44,8 +44,8 @@ export class Group extends React.Component {
 
   componentWillUnmount() {
     const { vk } = this.props;
-    vk.Observer.unsubscribe('widgets.groups.joined');
-    vk.Observer.unsubscribe('widgets.groups.leaved');
+    vk.Observer.unsubscribe("widgets.groups.joined");
+    vk.Observer.unsubscribe("widgets.groups.leaved");
   }
 
   render() {

@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-export class CommunityMessages extends React.Component {
+export default class CommunityMessages extends React.Component {
   static propTypes = {
     elementId: PropTypes.string,
     groupId: PropTypes.number.isRequired,
@@ -10,29 +10,29 @@ export class CommunityMessages extends React.Component {
       welcomeScreen: PropTypes.oneOf([0, 1]),
       expandTimeout: PropTypes.number,
       expanded: PropTypes.number,
-      widgetPosition: PropTypes.oneOf(['left', 'right']),
-      buttonType: PropTypes.oneOf(['no_button', 'blue_circle']),
+      widgetPosition: PropTypes.oneOf(["left", "right"]),
+      buttonType: PropTypes.oneOf(["no_button", "blue_circle"]),
       disableButtonTooltip: PropTypes.oneOf([0, 1]),
       tooltipButtonText: PropTypes.string,
       disableNewMessagesSound: PropTypes.number,
       disableExpandChatSound: PropTypes.number,
-      disableTitleChange: PropTypes.number,
+      disableTitleChange: PropTypes.number
     }),
-    onMount: PropTypes.func,
+    onMount: PropTypes.func
   };
 
   static defaultProps = {
-    elementId: 'vk_community_messages',
+    elementId: "vk_community_messages",
     options: {
       onCanNotWrite: reason => {},
       welcomeScreen: 1,
       expandTimeout: 0,
       expanded: 0,
-      widgetPosition: 'right',
-      buttonType: 'blue_circle',
-      disableButtonTooltip: 0,
+      widgetPosition: "right",
+      buttonType: "blue_circle",
+      disableButtonTooltip: 0
     },
-    onMount: () => {},
+    onMount: () => {}
   };
 
   componentDidMount() {

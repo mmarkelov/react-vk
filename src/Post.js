@@ -1,19 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-export class Post extends React.Component {
+export default class Post extends React.Component {
   static propTypes = {
     elementId: PropTypes.string,
     ownerId: PropTypes.number.isRequired,
     postId: PropTypes.number.isRequired,
     hash: PropTypes.string.isRequired,
     options: PropTypes.shape({
-      width: PropTypes.number,
-    }),
+      width: PropTypes.number
+    })
   };
 
   static defaultProps = {
-    elementId: 'vk_post',
+    elementId: "vk_post"
   };
 
   mount() {

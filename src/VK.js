@@ -1,18 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import VKContext from "./VKContext";
+
 export class VK extends React.Component {
   static propTypes = {
     apiId: PropTypes.number.isRequired,
     options: PropTypes.shape({
-      version: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+      version: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      onlyWidgets: PropTypes.bool
     }),
     onApiAvailable: PropTypes.func
   };
 
   static defaultProps = {
     options: {
-      version: 152
+      version: 152,
+      onlyWidgets: true
     },
     onApiAvailable: () => {}
   };
@@ -74,7 +78,8 @@ export class VK extends React.Component {
 
       window.vkAsyncInit = () => {
         window.VK.init({
-          apiId: apiId
+          apiId: apiId,
+          onlyWidgets: options.onlyWidgets
         });
 
         resolve(window.VK);
@@ -98,11 +103,11 @@ export class VK extends React.Component {
 
   render() {
     const { vk } = this.state;
-    const childrenWithProps = React.Children.map(this.props.children, child =>
-      React.cloneElement(child, {
-        vk: vk
-      })
-    );
-    return vk ? <React.Fragment>{childrenWithProps}</React.Fragment> : null;
+
+    return vk ? (
+      <VKContext.Provider value={vk}>
+        <React.Fragment>{this.props.children}</React.Fragment>
+      </VKContext.Provider>
+    ) : null;
   }
 }
