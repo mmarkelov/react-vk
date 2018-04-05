@@ -94,10 +94,10 @@ Every component has options object, which contains parameters (You can find avai
   You can set options by object,
   elementId - ID of the container element for the module,
   onMount = function that get mounted widget and elementId for extra actions:
-* destroy — deletes the widget(requires elementId);
-* expand — expands widget frame, may take welcomeScreen parameter (1 to show the welcome screen);
-* stopTitleAnimation — disables title animation when new message received;
-* minimize — minimizes widget frame.
+  destroy — deletes the widget(requires elementId);
+  expand — expands widget frame, may take welcomeScreen parameter (1 to show the welcome screen);
+  stopTitleAnimation — disables title animation when new message received;
+  minimize — minimizes widget frame.
   More information on [VK API](https://vk.com/dev/widget_community_messages)
 
 * `<ContactUs elementId={string} options={object} ownerId={number} />`
@@ -296,7 +296,7 @@ npm install && npm run dev
 
 Also you can check them [here](https://mmarkelov.github.io/react-vk/)
 
-##TODO
+## TODO
 
 * [ ] Add tests
 
