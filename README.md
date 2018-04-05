@@ -5,6 +5,11 @@ bindings for React
 
 ## Install
 
+Depending on your `react` you need different virsion of package:
+`react-vk@1.1.5` for `react < 16`
+`react-vk@1.1.6` for `react > 16.2`
+`react-vk` for `react > 16.3`
+
 ```shell
 npm install --save react-vk
 yarn add react-vk
