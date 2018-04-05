@@ -45,7 +45,11 @@ export default class Like extends React.Component {
       onShare,
       onUnshare
     } = this.props;
-    vk.Widgets.Like(elementId, options, pageId);
+    if (!!pageId) {
+      vk.Widgets.Like(elementId, options, pageId);
+    } else {
+      vk.Widgets.Like(elementId, options);
+    }
     vk.Observer.subscribe("widgets.like.liked", quantity => onLike(quantity));
     vk.Observer.subscribe("widgets.like.unliked", quantity =>
       onUnlike(quantity)
