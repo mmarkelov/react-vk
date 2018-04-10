@@ -8,7 +8,7 @@ bindings for React
 Depending on your `react` you need different virsion of package:  
 `react-vk@1.1.5` for `react < 16`  
 `react-vk@1.1.6` for `react > 16.2`  
-`react-vk` for `react > 16.3`  
+`react-vk` for `react > 16.3`
 
 ```shell
 npm install --save react-vk
@@ -124,6 +124,11 @@ Every component has options object, which contains parameters (You can find avai
   pageId - ID of the page on your site,
   When Like button is clicked you can use onLike and onUnlike functions. You can use number of Likes for the current page as a parameter.
   Similar when Share With Friends is selected
+
+  # Important note!
+
+  According to documentation VK Like component require page_id if we need two or more independent likes on single page. So if you are using SPA - pageId attribute is required!!
+
   More information on [VK API](https://vk.com/dev/widget_like)
 
 * `<Playlist elementId={string} ownerId={number} playlistId={number} hash={string} options={object} />`
