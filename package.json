@@ -1,7 +1,7 @@
 {
   "name": "react-vk",
   "private": false,
-  "version": "1.1.10",
+  "version": "1.1.11",
   "main": "build/index.js",
   "description": "VK API bindings for React",
   "files": [
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
     "babel-preset-env": "^1.6.1",
@@ -43,12 +43,12 @@
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-react-app": "^2.1.0",
-    "eslint-plugin-flowtype": "^2.46.2",
+    "eslint-plugin-flowtype": "^2.46.3",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
-    "lint-staged": "^7.0.4",
+    "lint-staged": "^7.0.5",
     "prettier": "^1.12.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.2"
