@@ -12,7 +12,7 @@
   "scripts": {
     "build": "babel src -d build",
     "prepublish": "npm run build",
-    "prettier": "prettier --write",
+    "prettier": "prettier --write src/*.js",
     "precommit": "lint-staged"
   },
   "lint-staged": {
