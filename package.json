@@ -43,15 +43,15 @@
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-react-app": "^2.1.0",
-    "eslint-plugin-flowtype": "^2.46.3",
-    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-flowtype": "^2.47.1",
+    "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.8.2",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.5",
     "prettier": "^1.12.1",
     "prop-types": "^15.6.1",
-    "react": "^16.3.2"
+    "react": "^16.4.0"
   },
   "keywords": [
     "react",
