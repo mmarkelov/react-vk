@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Recommended extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       limit: PropTypes.number,
@@ -25,13 +26,13 @@ export default class Recommended extends React.Component {
     }
   };
 
+  componentDidMount() {
+    this.mount();
+  }
+
   mount() {
     const { vk, elementId, options } = this.props;
     vk.Widgets.Recommended(elementId, options);
-  }
-
-  componentDidMount() {
-    this.mount();
   }
 
   render() {

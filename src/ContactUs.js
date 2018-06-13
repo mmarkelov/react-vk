@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class ContactUs extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       text: PropTypes.string,
@@ -18,13 +19,13 @@ export default class ContactUs extends React.Component {
     }
   };
 
+  componentDidMount() {
+    this.mount();
+  }
+
   mount() {
     const { vk, elementId, options, ownerId } = this.props;
     vk.Widgets.ContactUs(elementId, options, -ownerId);
-  }
-
-  componentDidMount() {
-    this.mount();
   }
 
   render() {

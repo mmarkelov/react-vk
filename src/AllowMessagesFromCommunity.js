@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class AllowMessagesFromCommunity extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       height: PropTypes.number
@@ -21,6 +22,15 @@ export default class AllowMessagesFromCommunity extends React.Component {
     onDeny: () => {}
   };
 
+  componentDidMount() {
+    this.mount();
+  }
+
+  componentWillUnmount() {
+    const { vk } = this.props;
+    vk.Observer.unsubscribe("widgets.allowMessagesFromCommunity.allowed");
+  }
+
   mount() {
     const { vk, elementId, options, groupId, onAllow, onDeny } = this.props;
     vk.Widgets.AllowMessagesFromCommunity(elementId, options, groupId);
@@ -31,15 +41,6 @@ export default class AllowMessagesFromCommunity extends React.Component {
     vk.Observer.subscribe("widgets.allowMessagesFromCommunity.denied", userId =>
       onDeny(userId)
     );
-  }
-
-  componentDidMount() {
-    this.mount();
-  }
-
-  componentWillUnmount() {
-    const { vk } = this.props;
-    vk.Observer.unsubscribe("widgets.allowMessagesFromCommunity.allowed");
   }
 
   render() {

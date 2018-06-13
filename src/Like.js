@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Like extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       type: PropTypes.oneOf(["full", "button", "mini", "vertical"]),
@@ -34,6 +35,18 @@ export default class Like extends React.Component {
     onUnshare: () => {}
   };
 
+  componentDidMount() {
+    this.mount();
+  }
+
+  componentWillUnmount() {
+    const { vk } = this.props;
+    vk.Observer.unsubscribe("widgets.like.liked");
+    vk.Observer.unsubscribe("widgets.like.unliked");
+    vk.Observer.unsubscribe("widgets.like.shared");
+    vk.Observer.unsubscribe("widgets.like.unshared");
+  }
+
   mount() {
     const {
       vk,
@@ -45,7 +58,7 @@ export default class Like extends React.Component {
       onShare,
       onUnshare
     } = this.props;
-    if (!!pageId) {
+    if (pageId) {
       vk.Widgets.Like(elementId, options, pageId);
     } else {
       vk.Widgets.Like(elementId, options);
@@ -58,18 +71,6 @@ export default class Like extends React.Component {
     vk.Observer.subscribe("widgets.like.unshared", quantity =>
       onUnshare(quantity)
     );
-  }
-
-  componentDidMount() {
-    this.mount();
-  }
-
-  componentWillUnmount() {
-    const { vk } = this.props;
-    vk.Observer.unsubscribe("widgets.like.liked");
-    vk.Observer.unsubscribe("widgets.like.unliked");
-    vk.Observer.unsubscribe("widgets.like.shared");
-    vk.Observer.unsubscribe("widgets.like.unshared");
   }
 
   render() {

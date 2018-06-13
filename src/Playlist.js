@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Playlist extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     ownerId: PropTypes.number.isRequired,
     playlistId: PropTypes.number.isRequired,
@@ -16,13 +17,13 @@ export default class Playlist extends React.Component {
     elementId: "vk_playlist"
   };
 
+  componentDidMount() {
+    this.mount();
+  }
+
   mount() {
     const { vk, elementId, ownerId, playlistId, hash, options } = this.props;
     vk.Widgets.Playlist(elementId, -ownerId, playlistId, hash, options);
-  }
-
-  componentDidMount() {
-    this.mount();
   }
 
   render() {

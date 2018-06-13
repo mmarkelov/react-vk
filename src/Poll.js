@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Poll extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       width: PropTypes.number,
@@ -18,13 +19,13 @@ export default class Poll extends React.Component {
     }
   };
 
+  componentDidMount() {
+    this.mount();
+  }
+
   mount() {
     const { vk, elementId, options, pollId } = this.props;
     vk.Widgets.Poll(elementId, options, pollId);
-  }
-
-  componentDidMount() {
-    this.mount();
   }
 
   render() {

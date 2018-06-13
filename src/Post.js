@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Post extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     ownerId: PropTypes.number.isRequired,
     postId: PropTypes.number.isRequired,
@@ -16,13 +17,13 @@ export default class Post extends React.Component {
     elementId: "vk_post"
   };
 
+  componentDidMount() {
+    this.mount();
+  }
+
   mount() {
     const { vk, elementId, ownerId, postId, hash, options } = this.props;
     vk.Widgets.Post(elementId, ownerId, postId, hash, options);
-  }
-
-  componentDidMount() {
-    this.mount();
   }
 
   render() {

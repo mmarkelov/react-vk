@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Comments extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -22,7 +23,7 @@ export default class Comments extends React.Component {
       norealtime: PropTypes.oneOf([0, 1]),
       pageUrl: PropTypes.string
     }),
-    pageId: PropTypes.number,
+    pageId: PropTypes.string,
     onNewComment: PropTypes.func,
     onDeleteComment: PropTypes.func
   };
@@ -41,6 +42,16 @@ export default class Comments extends React.Component {
     onDeleteComment: () => {}
   };
 
+  componentDidMount() {
+    this.mount();
+  }
+
+  componentWillUnmount() {
+    const { vk } = this.props;
+    vk.Observer.unsubscribe("widgets.comments.new_comment");
+    vk.Observer.unsubscribe("widgets.comments.delete_comment");
+  }
+
   mount() {
     const {
       vk,
@@ -57,16 +68,6 @@ export default class Comments extends React.Component {
         onNewComment(num, last_comment, date, sign)
     );
     vk.Observer.subscribe("widgets.comments.delete_comment", onDeleteComment);
-  }
-
-  componentDidMount() {
-    this.mount();
-  }
-
-  componentWillUnmount() {
-    const { vk } = this.props;
-    vk.Observer.unsubscribe("widgets.comments.new_comment");
-    vk.Observer.unsubscribe("widgets.comments.delete_comment");
   }
 
   render() {

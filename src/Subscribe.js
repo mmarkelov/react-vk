@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Subscribe extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       mode: PropTypes.number,
@@ -23,6 +24,16 @@ export default class Subscribe extends React.Component {
     onUnsubscribe: () => {}
   };
 
+  componentDidMount() {
+    this.mount();
+  }
+
+  componentWillUnmount() {
+    const { vk } = this.props;
+    vk.Observer.unsubscribe("widgets.subscribed");
+    vk.Observer.unsubscribe("widgets.unsubscribed");
+  }
+
   mount() {
     const {
       vk,
@@ -35,16 +46,6 @@ export default class Subscribe extends React.Component {
     vk.Widgets.Subscribe(elementId, options, ownerId);
     vk.Observer.subscribe("widgets.subscribed", onSubscribe);
     vk.Observer.subscribe("widgets.unsubscribed", onUnsubscribe);
-  }
-
-  componentDidMount() {
-    this.mount();
-  }
-
-  componentWillUnmount() {
-    const { vk } = this.props;
-    vk.Observer.unsubscribe("widgets.subscribed");
-    vk.Observer.unsubscribe("widgets.unsubscribed");
   }
 
   render() {

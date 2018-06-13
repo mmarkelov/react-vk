@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class CommunityMessages extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     groupId: PropTypes.number.isRequired,
     options: PropTypes.shape({
@@ -24,7 +25,7 @@ export default class CommunityMessages extends React.Component {
   static defaultProps = {
     elementId: "vk_community_messages",
     options: {
-      onCanNotWrite: reason => {},
+      onCanNotWrite: () => {},
       welcomeScreen: 1,
       expandTimeout: 0,
       expanded: 0,

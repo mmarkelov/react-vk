@@ -3,25 +3,29 @@ import PropTypes from "prop-types";
 
 export default class Application extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     appId: PropTypes.number.isRequired,
     options: PropTypes.shape({
-      mode: PropTypes.number,
+      mode: PropTypes.oneOf([1, 2, 3]),
       height: PropTypes.number
     })
   };
 
   static defaultProps = {
-    elementId: "vk_app"
+    elementId: "vk_app",
+    options: {
+      mode: 1
+    }
   };
+
+  componentDidMount() {
+    this.mount();
+  }
 
   mount() {
     const { vk, elementId, appId, options } = this.props;
     vk.Widgets.App(elementId, appId, options);
-  }
-
-  componentDidMount() {
-    this.mount();
   }
 
   render() {

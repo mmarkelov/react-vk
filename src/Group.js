@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Group extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     groupId: PropTypes.number.isRequired,
     options: PropTypes.shape({
@@ -31,13 +32,6 @@ export default class Group extends React.Component {
     onLeave: () => {}
   };
 
-  mount() {
-    const { vk, elementId, options, groupId, onJoin, onLeave } = this.props;
-    vk.Widgets.Group(elementId, options, groupId);
-    vk.Observer.subscribe("widgets.groups.joined", onJoin);
-    vk.Observer.subscribe("widgets.groups.leaved", onLeave);
-  }
-
   componentDidMount() {
     this.mount();
   }
@@ -46,6 +40,13 @@ export default class Group extends React.Component {
     const { vk } = this.props;
     vk.Observer.unsubscribe("widgets.groups.joined");
     vk.Observer.unsubscribe("widgets.groups.leaved");
+  }
+
+  mount() {
+    const { vk, elementId, options, groupId, onJoin, onLeave } = this.props;
+    vk.Widgets.Group(elementId, options, groupId);
+    vk.Observer.subscribe("widgets.groups.joined", onJoin);
+    vk.Observer.subscribe("widgets.groups.leaved", onLeave);
   }
 
   render() {

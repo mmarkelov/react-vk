@@ -1,3 +1,4 @@
+import VK from "./VK";
 import { withVK } from "./VKContext";
 import VKAllowMessagesFromCommunity from "./AllowMessagesFromCommunity";
 import VKApplication from "./App";
@@ -29,7 +30,7 @@ const Post = withVK(VKPost);
 const Recommended = withVK(VKRecommended);
 const Subscribe = withVK(VKSubscribe);
 
-export { VK } from "./VK";
+export default VK;
 
 export {
   AllowMessagesFromCommunity,

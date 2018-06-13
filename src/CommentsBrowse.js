@@ -14,6 +14,7 @@ export default class CommentsBrowse extends React.Component {
   };
 
   static defaultProps = {
+    vk: PropTypes.shape.isRequired,
     elementId: "vk_comments_browse",
     options: {
       height: 0,
@@ -23,13 +24,13 @@ export default class CommentsBrowse extends React.Component {
     }
   };
 
+  componentDidMount() {
+    this.mount();
+  }
+
   mount() {
     const { vk, elementId, options } = this.props;
     vk.Widgets.CommentsBrowse(elementId, options);
-  }
-
-  componentDidMount() {
-    this.mount();
   }
 
   render() {
