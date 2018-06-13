@@ -7,7 +7,7 @@ bindings for React
 
 VK now is imported as default!
 
-# Before(v1):
+### Before(v1):
 
 ```js
 import { VK, ... } from 'react-vk';
@@ -15,7 +15,7 @@ import { VK, ... } from 'react-vk';
 ...
 ```
 
-# After(v2):
+### After(v2):
 
 ```js
 import VK, { ... } from 'react-vk';
@@ -197,13 +197,11 @@ window.onload = function() {
 #### With react-vk
 
 ```js
-import { VK } from 'react-vk';
+import { VK } from "react-vk";
 
-const App = () => (
-  return (
-    <VK apiId={123456}/>
-  )
-);
+const App = () => {
+  return <VK apiId={123456} />;
+};
 ```
 
 ### Components
@@ -220,15 +218,15 @@ window.onload = function() {
 ### With react-vk
 
 ```js
-import { VK, Auth } from 'react-vk';
+import { VK, Auth } from "react-vk";
 
-const App = () => (
+const App = () => {
   return (
     <VK apiId={123456}>
       <Auth />
     </VK>
-  )
-);
+  );
+};
 ```
 
 ### Functions
@@ -253,18 +251,20 @@ const App = () => (
 ### With react-vk
 
 ```js
-import { VK, Subscribe } from 'react-vk';
+import { VK, Subscribe } from "react-vk";
 
-const App = () => (
+const App = () => {
   return (
     <VK apiId={123456}>
       <Subscribe
         ownerId={17437657}
-        onSubscribe={()=> {alert('Thank you!');}}
+        onSubscribe={() => {
+          alert("Thank you!");
+        }}
       />
     </VK>
-  )
-);
+  );
+};
 ```
 
 ### Using CommunityMessages
@@ -328,7 +328,7 @@ Also you can check them [here](https://mmarkelov.github.io/react-vk/)
 
 ## TODO
 
-- [ ] Add tests
+- [ ] Add more tests
 
 ## Acknowledgements
 
