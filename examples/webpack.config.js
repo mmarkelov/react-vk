@@ -2,28 +2,27 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const examples = path.resolve(process.cwd());
+
 const reactVK = path.resolve('../src');
+
+const devServer = process.argv[1].indexOf('webpack-dev-server') !== -1;
 
 const vendor = ['react', 'react-dom'];
 
-const isDebug = process.argv[1].indexOf('webpack-dev-server') !== -1;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
+  devtool: NODE_ENV === 'development' ? 'source-map' : '',
+
   devServer: {
-    open: true,
-    compress: true,
+    historyApiFallback: true,
     port: 3004,
   },
 
   entry: {
-    vendor: vendor,
-    index: './src/index.js',
-  },
-
-  output: {
-    path: __dirname + '/build',
-    publicPath: isDebug ? '/' : '/react-vk/',
-    filename: isDebug ? '[name].js' : 'static/js/[name].[chunkhash:8].js',
+    vendor,
+    index: ['babel-polyfill', examples + '/src/index.js'],
   },
 
   resolve: {
@@ -32,23 +31,24 @@ module.exports = {
     },
   },
 
-  cache: isDebug,
+  output: {
+    path: examples + '/build',
+    publicPath: devServer ? '/' : '/react-vk/',
+    filename: 'static/js/[name].[chunkhash:8].js',
+  },
 
   module: {
     rules: [
       {
         test: /\.js$/,
+        enforce: 'pre',
         exclude: /node_modules/,
-        use: [{ loader: 'babel-loader' }],
+        use: [{ loader: 'source-map-loader' }],
       },
       {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: { minimize: true },
-          },
-        ],
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [{ loader: 'babel-loader' }],
       },
       {
         test: /\.(gif|png|svg|jpe?g)$/,
