@@ -5,7 +5,7 @@ bindings for React
 
 ## Migrate v1 to v2
 
-# VK now is imported as default!
+VK now is imported as default!
 
 # Before(v1):
 

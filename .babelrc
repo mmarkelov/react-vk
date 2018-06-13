@@ -1,4 +1,9 @@
 {
-  "presets": ["env", "stage-1", "react"],
+  "presets": [
+    ["babel-preset-env", {
+      "targets": {
+        "node": "current"
+      }
+    }], "stage-1", "react"],
   "plugins": [["transform-react-remove-prop-types", { "removeImport": true }]]
 }
