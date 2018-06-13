@@ -3,6 +3,26 @@
 [VK API](https://vk.com/dev/widgets_for_sites)
 bindings for React
 
+## Migrate v1 to v2
+
+# VK now is imported as default!
+
+# Before(v1):
+
+```js
+import { VK, ... } from 'react-vk';
+
+...
+```
+
+# After(v2):
+
+```js
+import VK, { ... } from 'react-vk';
+
+...
+```
+
 ## Install
 
 Depending on your `react` you need different virsion of package:  
@@ -36,31 +56,31 @@ You need run this command as administrator!
 
 ### Basic components
 
-* `<VK apiId={123456} />` - provides child components with vk. apiId - requires
-* `<AllowMessagesFromCommunity />` - AllowMessagesFromCommunity Widget instance
-* `<Application />` - App Widget instance
-* `<Auth />` - Auth Widget instance
-* `<Comments />` - Comments Widget instance
-* `<CommentsBrowse />` - CommentsBrowse Widget instance
-* `<CommunityMessages />` - CommunityMessages Widget instance
-* `<ContactUs />` - ContactUs Widget instance
-* `<Group />` - Group Widget instance
-* `<Like />` - Like Widget instance
-* `<Playlist />` - Playlist Widget instance
-* `<Poll />` - Poll Widget instance
-* `<Post />` - Post Widget instance
-* `<Recommended />` - Recommended Widget instance
-* `<Subscribe />` - Subscribe Widget instance
+- `<VK apiId={123456} />` - provides child components with vk. apiId - requires
+- `<AllowMessagesFromCommunity />` - AllowMessagesFromCommunity Widget instance
+- `<Application />` - App Widget instance
+- `<Auth />` - Auth Widget instance
+- `<Comments />` - Comments Widget instance
+- `<CommentsBrowse />` - CommentsBrowse Widget instance
+- `<CommunityMessages />` - CommunityMessages Widget instance
+- `<ContactUs />` - ContactUs Widget instance
+- `<Group />` - Group Widget instance
+- `<Like />` - Like Widget instance
+- `<Playlist />` - Playlist Widget instance
+- `<Poll />` - Poll Widget instance
+- `<Post />` - Post Widget instance
+- `<Recommended />` - Recommended Widget instance
+- `<Subscribe />` - Subscribe Widget instance
 
 #### Information about components
 
 Every component has options object, which contains parameters (You can find available fields on VK API for selected widget)
 
-* `<VK apiId={number} onApiAvailable={function}/>`
+- `<VK apiId={number} onApiAvailable={function}/>`
   requires apiId for init VK. More information on [VK API](https://vk.com/dev/openapi)
   onApiAvailable - function that provide you access to VK api instance
 
-* `<AllowMessagesFromCommunity elementId={string} options={object} groupId={number} onAllow={function} onDeny={function} />`
+- `<AllowMessagesFromCommunity elementId={string} options={object} groupId={number} onAllow={function} onDeny={function} />`
   requires groupId for correct work.
   You can set options by object,
   elementId - ID of the container element for the module,
@@ -68,19 +88,19 @@ Every component has options object, which contains parameters (You can find avai
   onDeny(If the user denies messages)
   More information on [VK API](https://vk.com/dev/widget_allow_messages_from_community)
 
-* `<Application elementId={string} appId={number} options={object}/>`
+- `<Application elementId={string} appId={number} options={object}/>`
   requires appId for correct work.
   You can set options by object,
   elementId - ID of the container element for the module,
   More information on [VK API](https://vk.com/dev/widget_app)
 
-* `<Auth elementId={string} options={object} onAuth={function}/>`
+- `<Auth elementId={string} options={object} onAuth={function}/>`
   You can set options by object,
   elementId - ID of the container element for the module,
   use onAuth function(which can use a result of authorization(object with following fields: uid, first_name, last_name, photo, photo_rec, hash)
   More information on [VK API](https://vk.com/dev/widget_auth)
 
-* `<Comments elementId={string} options={object} pageId={string} onNewComment={function} onDeleteComment={function} />`
+- `<Comments elementId={string} options={object} pageId={string} onNewComment={function} onDeleteComment={function} />`
   You can set options by object,
   pageId - ID of the page on your site,
   elementId - ID of the container element for the module.
@@ -88,13 +108,13 @@ Every component has options object, which contains parameters (You can find avai
   num, last_comment, date, sign
   More information on [VK API](https://vk.com/dev/widget_comments)
 
-* `<CommentsBrowse elementId={string} options={object} />`
+- `<CommentsBrowse elementId={string} options={object} />`
   You can set options by object,
   pageId - ID of the page on your site,
   elementId - ID of the container element for the module.
   More information on [VK API](https://vk.com/dev/widget_comments)
 
-* `<CommunityMessages elementId={string} options={object} groupId={number} onMount={function} />`
+- `<CommunityMessages elementId={string} options={object} groupId={number} onMount={function} />`
   requires groupId for correct work.
   You can set options by object,
   elementId - ID of the container element for the module,
@@ -105,20 +125,20 @@ Every component has options object, which contains parameters (You can find avai
   minimize — minimizes widget frame.
   More information on [VK API](https://vk.com/dev/widget_community_messages)
 
-* `<ContactUs elementId={string} options={object} ownerId={number} />`
+- `<ContactUs elementId={string} options={object} ownerId={number} />`
   requires ownerId for correct work.
   You can set options by object,
   elementId - ID of the container element for the module
   More information on [VK API](https://vk.com/dev/widget_contact_us)
 
-* `<Group elementId={string} groupId={number} options={object} onJoin={function} onLeave={function} />`
+- `<Group elementId={string} groupId={number} options={object} onJoin={function} onLeave={function} />`
   requires groupId for correct work.
   You can set options by object,
   elementId - ID of the container element for the module,
   When the 'Follow on VK' button is clicked your can use onJoin and onLeave functions
   More information on [VK API](https://vk.com/dev/widget_community)
 
-* `<Like elementId={string} options={object} pageId={string} onLike={function} onUnlike={function} onShare={function} onUnshare={function} />`
+- `<Like elementId={string} options={object} pageId={string} onLike={function} onUnlike={function} onShare={function} onUnshare={function} />`
   You can set options by object,
   elementId - ID of the container element for the module,
   pageId - ID of the page on your site,
@@ -131,30 +151,30 @@ Every component has options object, which contains parameters (You can find avai
 
   More information on [VK API](https://vk.com/dev/widget_like)
 
-* `<Playlist elementId={string} ownerId={number} playlistId={number} hash={string} options={object} />`
+- `<Playlist elementId={string} ownerId={number} playlistId={number} hash={string} options={object} />`
   For correct works requires ownerId, playlistId, hash(service parameter. hash can be obtained in the constructor only.)
   You can set options by object,
   elementId - ID of the container element for the module
   More information on [VK API](https://vk.com/dev/widget_playlist)
 
-* `<Poll elementId={string} options={object} pollId={string} />`
+- `<Poll elementId={string} options={object} pollId={string} />`
   requires pollId for correct work(You can get it using the form on https://vk.com/dev/Poll or with a button "Get code" in the existing poll)
   You can set options by object,
   elementId - ID of the container element for the module
   More information on [VK API](https://vk.com/dev/widget_poll)
 
-* `<Post elementId={string} options={object} ownerId={number} postId={number} hash={string} />`
+- `<Post elementId={string} options={object} ownerId={number} postId={number} hash={string} />`
   For correct works requires ownerId, postId, hash(You can get hash in widget's constructor or "Export" window only.)
   You can set options by object,
   elementId - ID of the container element for the module
   More information on [VK API](https://vk.com/dev/widget_post)
 
-* `<Recommended elementId={string} options={object} />`
+- `<Recommended elementId={string} options={object} />`
   You can set options by object,
   elementId - ID of the container element for the module
   More information on [VK API](https://vk.com/dev/widget_recommended)
 
-* `<Subscribe elementId={string} options={object} ownerId={number} onSubscribe={function} onUnsubscribe={function} />`
+- `<Subscribe elementId={string} options={object} ownerId={number} onSubscribe={function} onUnsubscribe={function} />`
   requires ownerId for correct work.
   You can set options by object,
   elementId - ID of the container element for the module,
@@ -308,10 +328,10 @@ Also you can check them [here](https://mmarkelov.github.io/react-vk/)
 
 ## TODO
 
-* [ ] Add tests
+- [ ] Add tests
 
 ## Acknowledgements
 
-* Thanks to [@gribnoysup](https://github.com/gribnoysup/) and his [react-yandex-maps](https://github.com/gribnoysup/react-yandex-maps) for inspiration and motivation.
-* Thanks to [@seeden](https://github.com/seeden/) and his [react-facebook](https://github.com/seeden/react-facebook) for inspiration and motivation.
-* Lots of features were founded in these perfect packages.
+- Thanks to [@gribnoysup](https://github.com/gribnoysup/) and his [react-yandex-maps](https://github.com/gribnoysup/react-yandex-maps) for inspiration and motivation.
+- Thanks to [@seeden](https://github.com/seeden/) and his [react-facebook](https://github.com/seeden/react-facebook) for inspiration and motivation.
+- Lots of features were founded in these perfect packages.
