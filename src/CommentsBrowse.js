@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class CommentsBrowse extends React.Component {
   static propTypes = {
+    vk: PropTypes.shape.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -14,7 +15,6 @@ export default class CommentsBrowse extends React.Component {
   };
 
   static defaultProps = {
-    vk: PropTypes.shape.isRequired,
     elementId: "vk_comments_browse",
     options: {
       height: 0,
