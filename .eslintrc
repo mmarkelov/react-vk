@@ -1,9 +1,7 @@
 {
-  "extends": [
-    "prettier",
-    "prettier/react",
-    "react-app",
-    "plugin:jsx-a11y/recommended"
-  ],
-  "plugins": ["jsx-a11y"]
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  }
 }
