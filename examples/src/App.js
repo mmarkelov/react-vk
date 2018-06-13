@@ -1,10 +1,10 @@
 import React from 'react';
-import Navigation from './components/Navigation';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import Navigation from './components/Navigation';
 import './App.css';
 
-const asyncComponent = getComponent => {
-  return class AsyncComponent extends React.Component {
+const asyncComponent = getComponent =>
+  class AsyncComponent extends React.Component {
     static Component = null;
     state = { Component: AsyncComponent.Component };
 
@@ -24,7 +24,6 @@ const asyncComponent = getComponent => {
       return <div className="App-content">Loading...</div>;
     }
   };
-};
 
 const components = [
   { link: '/', title: 'Home' },

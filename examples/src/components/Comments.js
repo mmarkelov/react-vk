@@ -1,5 +1,5 @@
 import React from 'react';
-import { VK, Comments } from 'react-vk';
+import VK, { Comments } from 'react-vk';
 
 const Comment = () => {
   const handleNewComment = (num, last_comment, date, sign) => {

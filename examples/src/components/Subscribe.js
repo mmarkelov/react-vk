@@ -1,5 +1,5 @@
 import React from 'react';
-import { VK, Subscribe } from 'react-vk';
+import VK, { Subscribe } from 'react-vk';
 
 const SubscribeToAuthor = () => {
   const handleSubscribe = () => {

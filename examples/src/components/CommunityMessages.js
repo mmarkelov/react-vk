@@ -1,5 +1,5 @@
 import React from 'react';
-import { VK, CommunityMessages } from 'react-vk';
+import VK, { CommunityMessages } from 'react-vk';
 
 class CommunityMessage extends React.Component {
   state = {
