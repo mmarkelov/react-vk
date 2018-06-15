@@ -145,9 +145,9 @@ Every component has options object, which contains parameters (You can find avai
   When Like button is clicked you can use onLike and onUnlike functions. You can use number of Likes for the current page as a parameter.
   Similar when Share With Friends is selected
 
-  # Important note!
+  ### Important note!
 
-  According to documentation VK Like component require page_id if we need two or more independent likes on single page. So if you are using SPA - pageId attribute is required!!
+  According to documentation VK Like component require page_id if we need two or more independent likes on single page. So if you are using SPA - pageId attribute is required!
 
   More information on [VK API](https://vk.com/dev/widget_like)
 
