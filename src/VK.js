@@ -8,6 +8,8 @@ import VKApi from "./API";
 let VKInstance = null;
 
 export default class VK extends React.Component {
+  _mounted = true;
+
   static propTypes = {
     apiId: PropTypes.number.isRequired,
     options: PropTypes.shape({
@@ -19,14 +21,13 @@ export default class VK extends React.Component {
 
   static defaultProps = {
     options: {
-      version: 154,
+      version: 156,
       onlyWidgets: true
     },
     onApiAvailable: () => {}
   };
 
   state = { vk: null };
-  _mounted = true;
 
   componentDidMount() {
     if (
