@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{111:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var l,a=n(2),o=(l=a)&&l.__esModule?l:{default:l},d=n(110);t.default=(()=>o.default.createElement("div",{className:"App-content"},o.default.createElement("div",{style:{textAlign:"center"}},o.default.createElement("h2",null,"Ooops! Page not found"),o.default.createElement(d.Link,{to:"/"},"Go Home"))))}}]);
+//# sourceMappingURL=1.7cfb3b0b.js.map
