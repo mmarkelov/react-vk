@@ -1,7 +1,7 @@
 {
   "name": "react-vk",
   "private": false,
-  "version": "2.0.7",
+  "version": "2.0.8",
   "main": "build/index.js",
   "description": "VK API bindings for React",
   "files": [
