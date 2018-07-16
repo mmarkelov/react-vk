@@ -38,7 +38,7 @@
     "url": "https://github.com/mmarkelov/react-vk"
   },
   "peerDependencies": {
-    "react": "16.3.x"
+    "react": "16.3.x || || 16.4."
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
