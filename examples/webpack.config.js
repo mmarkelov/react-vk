@@ -1,3 +1,4 @@
+require('@babel/polyfill');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -22,7 +23,7 @@ module.exports = {
 
   entry: {
     vendor,
-    index: ['babel-polyfill', examples + '/src/index.js'],
+    index: ['@babel/polyfill', examples + '/src/index.js'],
   },
 
   resolve: {
@@ -48,7 +49,28 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [{ loader: 'babel-loader' }],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    targets: {
+                      node: 'current',
+                    },
+                  },
+                ],
+                '@babel/preset-react',
+              ],
+              plugins: [
+                '@babel/plugin-proposal-class-properties',
+                '@babel/plugin-proposal-object-rest-spread',
+              ],
+            },
+          },
+        ],
       },
       {
         test: /\.(gif|png|svg|jpe?g)$/,
