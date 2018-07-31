@@ -21,7 +21,7 @@ export default class VK extends React.Component {
 
   static defaultProps = {
     options: {
-      version: 156,
+      version: 158,
       onlyWidgets: true
     },
     onApiAvailable: () => {}
