@@ -1,6 +1,6 @@
 {
   "name": "react-vk",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "VK API bindings for React",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
