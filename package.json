@@ -3,6 +3,7 @@
   "private": false,
   "version": "2.1.0",
   "main": "build/index.js",
+  "browserslist": "last 2 versions, ie 10",
   "description": "VK API bindings for React",
   "files": [
     "build",
