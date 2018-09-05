@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import vkPropTypes from "./vkPropTypes";
 
 export default class ContactUs extends React.Component {
   static propTypes = {
-    vk: PropTypes.shape.isRequired,
+    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       text: PropTypes.string,

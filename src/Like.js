@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import vkPropTypes from "./vkPropTypes";
 
 export default class Like extends React.Component {
   static propTypes = {
-    vk: PropTypes.shape.isRequired,
+    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       type: PropTypes.oneOf(["full", "button", "mini", "vertical"]),
@@ -29,6 +30,7 @@ export default class Like extends React.Component {
       height: 22,
       verb: 0
     },
+    pageId: null,
     onLike: () => {},
     onUnlike: () => {},
     onShare: () => {},

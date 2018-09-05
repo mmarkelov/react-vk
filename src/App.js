@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import vkPropTypes from "./vkPropTypes";
 
 export default class Application extends React.Component {
   static propTypes = {
-    vk: PropTypes.shape.isRequired,
+    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     appId: PropTypes.number.isRequired,
     options: PropTypes.shape({

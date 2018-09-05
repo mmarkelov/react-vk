@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import vkPropTypes from "./vkPropTypes";
 
 export default class Post extends React.Component {
   static propTypes = {
-    vk: PropTypes.shape.isRequired,
+    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     ownerId: PropTypes.number.isRequired,
     postId: PropTypes.number.isRequired,
@@ -14,7 +15,8 @@ export default class Post extends React.Component {
   };
 
   static defaultProps = {
-    elementId: "vk_post"
+    elementId: "vk_post",
+    options: {}
   };
 
   componentDidMount() {

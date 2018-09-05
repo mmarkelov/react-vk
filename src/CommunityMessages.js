@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import vkPropTypes from "./vkPropTypes";
 
 export default class CommunityMessages extends React.Component {
   static propTypes = {
-    vk: PropTypes.shape.isRequired,
+    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     groupId: PropTypes.number.isRequired,
     options: PropTypes.shape({

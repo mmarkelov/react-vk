@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import vkPropTypes from "./vkPropTypes";
 
 export default class Comments extends React.Component {
   static propTypes = {
-    vk: PropTypes.shape.isRequired,
+    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -38,6 +39,7 @@ export default class Comments extends React.Component {
       mini: "auto",
       norealtime: 0
     },
+    pageId: null,
     onNewComment: () => {},
     onDeleteComment: () => {}
   };

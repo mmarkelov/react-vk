@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* global window */
 import React from "react";
 import PropTypes from "prop-types";
@@ -60,8 +61,9 @@ export default class VK extends React.Component {
 
   render() {
     const { vk } = this.state;
+    const { children } = this.props;
     return vk ? (
-      <VKContext.Provider value={vk}>{this.props.children}</VKContext.Provider>
+      <VKContext.Provider value={vk}>{children}</VKContext.Provider>
     ) : null;
   }
 }
