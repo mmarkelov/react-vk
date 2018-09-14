@@ -2,16 +2,22 @@
   "name": "react-vk",
   "private": false,
   "version": "2.1.6",
-  "main": "build/index.js",
+  "main": "./module/index.js",
+  "browser": "./lib/index.js",
+  "module": "./module/index.js",
   "browserslist": "last 2 versions, ie 10",
   "description": "VK API bindings for React",
   "files": [
-    "build",
+    "lib",
+    "module",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "build": "babel src -d build",
+    "build-browser": "BABEL_ENV=browser babel src -d lib",
+    "build-module": "BABEL_ENV=module babel src -d module",
+    "build": "npm run build-browser && npm run build-module",
+    "eslint": "eslint --ext .js,.jsx ./src",
     "test": "jest ./tests/",
     "test:coverage": "jest --coverage ./tests/",
     "test:watch": "jest --watch ./tests/",
@@ -46,6 +52,8 @@
     "@babel/cli": "7.0.0",
     "@babel/core": "7.0.1",
     "@babel/plugin-proposal-class-properties": "7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "7.0.0",
     "@babel/preset-react": "7.0.0",
     "babel-core": "^7.0.0-bridge.0",
@@ -76,5 +84,8 @@
     "react-vk-api"
   ],
   "author": "Maksim Markelov <mapkeji26@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.0.0"
+  }
 }
