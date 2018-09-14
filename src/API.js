@@ -4,7 +4,7 @@ export default class VKApi {
   constructor(apiId, options = {}) {
     this.apiId = apiId;
     this.options = {
-      version: 154,
+      version: 159,
       onlyWidgets: true,
       ...options
     };
