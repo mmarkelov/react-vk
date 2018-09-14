@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{110:function(e,t,a){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var l,n=(l=a(2))&&l.__esModule?l:{default:l},o=a(111);var d=()=>n.default.createElement("div",{className:"App-content"},n.default.createElement("div",{style:{textAlign:"center"}},n.default.createElement("h2",null,"Ooops! Page not found"),n.default.createElement(o.Link,{to:"/"},"Go Home")));t.default=d}}]);
-//# sourceMappingURL=1.e74ea20e.js.map
