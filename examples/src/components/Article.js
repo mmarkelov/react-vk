@@ -21,8 +21,8 @@ const ArticleWidget = () => {
     <h4>Result:</h4>
     <VK apiId={6247321}>
       <Article
-        elementId={"vk_article_tassagency-mayakovskiy"}
-        articleLink={"@tassagency-mayakovskiy"}
+        elementId='vk_article_tassagency-mayakovskiy'
+        articleLink='@tassagency-mayakovskiy'
       />
     </VK>
     <h5>
