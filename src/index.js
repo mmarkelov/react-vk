@@ -14,6 +14,7 @@ import VKPoll from "./Poll";
 import VKPost from "./Post";
 import VKRecommended from "./Recommended";
 import VKSubscribe from "./Subscribe";
+import VKArticle from "./Article";
 
 const AllowMessagesFromCommunity = withVK(VKAllowMessagesFromCommunity);
 const Application = withVK(VKApplication);
@@ -29,6 +30,7 @@ const Poll = withVK(VKPoll);
 const Post = withVK(VKPost);
 const Recommended = withVK(VKRecommended);
 const Subscribe = withVK(VKSubscribe);
+const Article = withVK(VKArticle);
 
 export default VK;
 
@@ -46,5 +48,6 @@ export {
   Poll,
   Post,
   Recommended,
-  Subscribe
+  Subscribe,
+  Article
 };
