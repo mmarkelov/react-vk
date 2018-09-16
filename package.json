@@ -17,7 +17,7 @@
     "build-browser": "BABEL_ENV=browser babel src -d lib",
     "build-module": "BABEL_ENV=module babel src -d module",
     "build": "npm run build-browser && npm run build-module",
-    "eslint": "eslint --ext .js,.jsx ./src",
+    "eslint": "eslint --fix --ext .js,.jsx ./src",
     "test": "jest ./tests/",
     "test:coverage": "jest --coverage ./tests/",
     "test:watch": "jest --watch ./tests/",

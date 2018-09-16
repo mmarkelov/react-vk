@@ -39,6 +39,7 @@ const components = [
   { link: '/poll', title: 'Poll' },
   { link: '/post', title: 'Post' },
   { link: '/app', title: 'Application' },
+  { link: '/article', title: 'Article' }
 ];
 
 const NotFound = asyncComponent(() =>

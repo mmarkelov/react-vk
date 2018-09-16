@@ -15,6 +15,7 @@ const Navigation = () => {
     { link: '/poll', title: 'Poll' },
     { link: '/post', title: 'Post' },
     { link: '/app', title: 'App' },
+    { link: '/article', title: 'Article' }
   ];
   return (
     <nav>
