@@ -6,16 +6,11 @@ export default class Post extends React.Component {
   static propTypes = {
     vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
-    articleLink: PropTypes.string,
-    options: PropTypes.shape({
-      width: PropTypes.number
-    })
+    articleLink: PropTypes.string.isRequired
   };
 
   static defaultProps = {
-    elementId: "vk_article",
-    articleLink: null,
-    options: {}
+    elementId: "vk_article"
   };
 
   componentDidMount() {
@@ -23,8 +18,8 @@ export default class Post extends React.Component {
   }
 
   mount() {
-    const { vk, elementId, articleLink, options } = this.props;
-    vk.Widgets.Article(elementId, articleLink, options);
+    const { vk, elementId, articleLink } = this.props;
+    vk.Widgets.Article(elementId, articleLink);
   }
 
   render() {
