@@ -1,7 +1,7 @@
 import React from "react";
 import VK, { Article } from "react-vk";
 
-const PostWidget = () => (
+const ArticleWidget = () => (
   <div className="App-content">
     <h2>Article Component</h2>
     <h4>To use Article Widget:</h4>
@@ -34,4 +34,4 @@ const ArticleWidget = () => {
   </div>
 );
 
-export default PostWidget;
+export default ArticleWidget;
