@@ -48,16 +48,16 @@
     "react": "16.x"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0",
-    "@babel/core": "7.0.1",
-    "@babel/plugin-proposal-class-properties": "7.0.0",
+    "@babel/cli": "7.1.0",
+    "@babel/core": "7.1.0",
+    "@babel/plugin-proposal-class-properties": "7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/preset-env": "7.0.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.15",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.18",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.4.0",
     "eslint": "^5.6.0",
@@ -68,11 +68,11 @@
     "eslint-plugin-react": "^7.11.1",
     "husky": "^0.14.3",
     "jest": "^23.5.0",
-    "lint-staged": "^7.2.2",
+    "lint-staged": "^7.3.0",
     "prettier": "^1.14.2",
     "prop-types": "^15.6.2",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1"
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   },
   "keywords": [
     "react",
