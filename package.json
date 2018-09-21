@@ -7,7 +7,7 @@
   "description": "VK API bindings for React",
   "files": [
     "lib",
-    "module",
+    "es",
     "README.md",
     "LICENSE"
   ],
