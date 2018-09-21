@@ -4,9 +4,4 @@ node_modules
 umd
 examples/build
 build
-
-.*
-!.gitignore
-!.babelrc
-!.eslintrc
-!.eslintrc.json
+yarn.lock
