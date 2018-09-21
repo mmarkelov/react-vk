@@ -3,7 +3,7 @@
 [VK API](https://vk.com/dev/widgets_for_sites)
 bindings for React
 
-## Migrate v1 to v2
+## Migrate from v1
 
 VK now is imported as default!
 
@@ -15,7 +15,7 @@ import { VK, ... } from 'react-vk';
 ...
 ```
 
-### After(v2):
+### After:
 
 ```js
 import VK, { ... } from 'react-vk';
@@ -25,9 +25,9 @@ import VK, { ... } from 'react-vk';
 
 ## Install
 
-Depending on your `react` you need different virsion of package:  
-`react-vk@1.1.5` for `react < 16`  
-`react-vk@1.1.6` for `react > 16.2`  
+Depending on your `react` you need different version of package:
+`react-vk@1.1.5` for `react < 16`
+`react-vk@1.1.6` for `react > 16.2`
 `react-vk` for `react > 16.3`
 
 ```shell
@@ -59,6 +59,7 @@ You need run this command as administrator!
 - `<VK apiId={123456} />` - provides child components with vk. apiId - requires
 - `<AllowMessagesFromCommunity />` - AllowMessagesFromCommunity Widget instance
 - `<Application />` - App Widget instance
+- `<Article />` - Article Widget instance
 - `<Auth />` - Auth Widget instance
 - `<Comments />` - Comments Widget instance
 - `<CommentsBrowse />` - CommentsBrowse Widget instance
@@ -88,13 +89,18 @@ Every component has options object, which contains parameters (You can find avai
   onDeny(If the user denies messages)
   More information on [VK API](https://vk.com/dev/widget_allow_messages_from_community)
 
-- `<Application elementId={string} appId={number} options={object}/>`
+- `<Article elementId={string} articleUrl={string} />`
+  elementId - ID of the container element for the module,
+  articleUrl - url of article,
+  More information on [VK API](https://vk.com/dev/widget_article)
+
+- `<Application elementId={string} appId={number} options={object} />`
   requires appId for correct work.
   You can set options by object,
   elementId - ID of the container element for the module,
   More information on [VK API](https://vk.com/dev/widget_app)
 
-- `<Auth elementId={string} options={object} onAuth={function}/>`
+- `<Auth elementId={string} options={object} onAuth={function} />`
   You can set options by object,
   elementId - ID of the container element for the module,
   use onAuth function(which can use a result of authorization(object with following fields: uid, first_name, last_name, photo, photo_rec, hash)
@@ -197,7 +203,7 @@ window.onload = function() {
 #### With react-vk
 
 ```js
-import { VK } from "react-vk";
+import VK from "react-vk";
 
 const App = () => {
   return <VK apiId={123456} />;
@@ -218,7 +224,7 @@ window.onload = function() {
 ### With react-vk
 
 ```js
-import { VK, Auth } from "react-vk";
+import VK, { Auth } from "react-vk";
 
 const App = () => {
   return (
@@ -251,7 +257,7 @@ const App = () => {
 ### With react-vk
 
 ```js
-import { VK, Subscribe } from "react-vk";
+import VK, { Subscribe } from "react-vk";
 
 const App = () => {
   return (
@@ -285,8 +291,7 @@ const App = () => {
 ### With react-vk
 
 ```js
-import React, { Component } from 'react';
-import { VK, CommunityMessages } from 'react-vk';
+import VK, { CommunityMessages } from 'react-vk';
 
 class App extends Component {
   state = {
