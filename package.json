@@ -1,7 +1,7 @@
 {
   "name": "react-vk",
   "private": false,
-  "version": "3.2.0",
+  "version": "3.3.0",
   "main": "./lib/index.js",
   "module": "./module/index.js",
   "browserslist": "last 2 versions, ie 10",
