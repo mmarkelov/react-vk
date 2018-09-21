@@ -2,9 +2,8 @@
   "name": "react-vk",
   "private": false,
   "version": "3.3.1",
-  "main": "./module/index.js",
-  "browser": "./module/index.js",
-  "browserslist": "last 2 versions, ie 10",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
   "description": "VK API bindings for React",
   "files": [
     "lib",
@@ -13,8 +12,8 @@
     "LICENSE"
   ],
   "scripts": {
-    "build-browser": "BABEL_ENV=browser babel src -d lib",
-    "build-module": "BABEL_ENV=module babel src -d module",
+    "build-browser": "BABEL_ENV=browser babel src -d es",
+    "build-module": "BABEL_ENV=module babel src -d lib",
     "build": "npm run build-browser && npm run build-module",
     "eslint": "eslint --fix --ext .js,.jsx ./src",
     "test": "jest ./tests/",
