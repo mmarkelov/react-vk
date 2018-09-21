@@ -3,13 +3,13 @@ module.exports = function(api) {
   return {
     presets: [
       [
-        '@babel/preset-env',
+        '@babel/env',
         {
           loose: true,
           modules: process.env.BABEL_ENV === 'browser' ? false : 'commonjs',
         },
       ],
-      '@babel/preset-react',
+      '@babel/react',
     ],
     plugins: [
       '@babel/plugin-transform-runtime',
