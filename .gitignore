@@ -1,7 +1,6 @@
-es
-main
+lib
+module
 node_modules
-umd
 examples/build
 build
 yarn.lock
