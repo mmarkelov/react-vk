@@ -6,7 +6,7 @@ export default class Post extends React.Component {
   static propTypes = {
     vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
-    articleLink: PropTypes.string.isRequired
+    articleUrl: PropTypes.string.isRequired
   };
 
   static defaultProps = {
@@ -18,8 +18,8 @@ export default class Post extends React.Component {
   }
 
   mount() {
-    const { vk, elementId, articleLink } = this.props;
-    vk.Widgets.Article(elementId, articleLink);
+    const { vk, elementId, articleUrl } = this.props;
+    vk.Widgets.Article(elementId, articleUrl);
   }
 
   render() {
