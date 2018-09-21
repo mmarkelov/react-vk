@@ -22,9 +22,14 @@ const Home = () => (
       <li>Import components from package</li>
       <pre>
         <code className="lang-bash">
-          import {'{'}
-          <span className="hljs-keyword"> VK, Auth </span>
-          {'}'} from '<span className="hljs-keyword">react-vk</span>';
+          import
+          <span className="hljs-keyword">
+            {' '}
+            VK, {'{'}
+            Auth
+            {'}'}{' '}
+          </span>
+          from <span className="hljs-keyword">react-vk</span>;
         </code>
       </pre>
       <li>Now set your Api id with 'apiId' property</li>
