@@ -7,7 +7,7 @@ const PollWidget = () => (
     <h4>To use Polls Widget:</h4>
     <pre style={{ width: '80%' }}>
       {`
-import {VK, Poll} from 'react-vk';
+import VK, {Poll} from 'react-vk';
 
 const PollWidget = () => {
 	return (

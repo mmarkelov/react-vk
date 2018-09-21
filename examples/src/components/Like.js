@@ -7,7 +7,7 @@ const LikeComponent = () => (
     <h4>To use Like Widget:</h4>
     <pre style={{ width: '60%' }}>
       {`
-import {VK, Like} from 'react-vk';
+import VK, {Like} from 'react-vk';
 
 const LikeComponent = () => {
 	return (

@@ -7,7 +7,7 @@ const PostWidget = () => (
     <h4>To use Post Widget:</h4>
     <pre style={{ width: '70%' }}>
       {`
-import {VK, Post} from 'react-vk';
+import VK, {Post} from 'react-vk';
 
 const PostWidget = () => {
 	return (

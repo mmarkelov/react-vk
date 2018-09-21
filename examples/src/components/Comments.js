@@ -12,7 +12,7 @@ const Comment = () => {
       <h4>To use Comments Widget:</h4>
       <pre style={{ width: '75%' }}>
         {`
-import {VK, Comments} from 'react-vk';
+import VK, {Comments} from 'react-vk';
 
 const handleNewComment = (num, last_comment, date, sign) => {
     console.log(last_comment);

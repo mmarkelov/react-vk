@@ -7,7 +7,7 @@ const PlaylistWidget = () => (
     <h4>To use Playlist Widget:</h4>
     <pre style={{ width: '70%' }}>
       {`
-import {VK, Playlist} from 'react-vk';
+import VK, {Playlist} from 'react-vk';
 
 const PlaylistWidget = () => {
 	return (

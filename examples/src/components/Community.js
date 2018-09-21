@@ -7,7 +7,7 @@ const Community = () => (
     <h4>To use Community Widget:</h4>
     <pre style={{ width: '60%' }}>
       {`
-import {VK, Group} from 'react-vk';
+import VK, {Group} from 'react-vk';
 
 const Community = () => {
 	return (

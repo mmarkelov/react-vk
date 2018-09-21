@@ -7,7 +7,7 @@ const ArticleWidget = () => (
     <h4>To use Article Widget:</h4>
     <pre style={{ width: "80%" }}>
       {`
-import {VK, Article} from 'react-vk';
+import VK, {Article} from 'react-vk';
 
 const ArticleWidget = () => {
 	return (

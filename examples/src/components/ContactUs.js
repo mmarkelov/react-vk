@@ -7,7 +7,7 @@ const Contact = () => (
     <h4>To use Contact Us Widget:</h4>
     <pre style={{ width: '60%' }}>
       {`
-import {VK, ContactUs} from 'react-vk';
+import VK, {ContactUs} from 'react-vk';
 
 const Contact = () => {
 	return (

@@ -18,7 +18,7 @@ class CommunityMessage extends React.Component {
         <h4>To use Community Messages Widget:</h4>
         <pre style={{ width: '70%' }}>
           {`
-import {VK, CommunityMessages} from 'react-vk';
+import VK, {CommunityMessages} from 'react-vk';
 
 class Messages extends React.Component {
 

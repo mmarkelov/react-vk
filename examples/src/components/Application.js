@@ -7,7 +7,7 @@ const App = () => (
     <h4>To use App Widget:</h4>
     <pre style={{ width: '60%' }}>
       {`
-import {VK, Application} from 'react-vk';
+import VK, {Application} from 'react-vk';
 
 const App = () => {
 	return (

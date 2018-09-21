@@ -7,7 +7,7 @@ const Recommendations = () => (
     <h4>To use Recommendations Widget:</h4>
     <pre style={{ width: '50%' }}>
       {`
-import {VK, Recommended} from 'react-vk';
+import VK, {Recommended} from 'react-vk';
 
 const Recommendations = () => {
 	return (

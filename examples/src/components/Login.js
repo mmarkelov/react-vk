@@ -7,7 +7,7 @@ const Login = () => (
     <h4>To use Authorization Widget:</h4>
     <pre>
       {`
-import {(VK, Auth)} from 'react-vk';
+import VK, {Auth} from 'react-vk';
 
 const Login = () => {
 	return (
