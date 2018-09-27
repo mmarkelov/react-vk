@@ -13,7 +13,7 @@ const ArticleWidget = () => {
 	return (
 	    <VK apiId={your_api_id}>
                 <Article elementId="vk_article_tassagency-mayakovskiy"
-                         articleLink="@tassagency-mayakovskiy" />
+                         articleUrl="@tassagency-mayakovskiy" />
             </VK>
 	)
 };`}
@@ -22,7 +22,7 @@ const ArticleWidget = () => {
     <VK apiId={6247321}>
       <Article
         elementId='vk_article_tassagency-mayakovskiy'
-        articleLink='@tassagency-mayakovskiy'
+        articleUrl='@tassagency-mayakovskiy'
       />
     </VK>
     <h5>
