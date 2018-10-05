@@ -12,8 +12,8 @@
     "LICENSE"
   ],
   "scripts": {
-    "build-browser": "BABEL_ENV=browser babel src -d es",
-    "build-module": "BABEL_ENV=module babel src -d lib",
+    "build-browser": "rm -rf es && BABEL_ENV=browser babel src -d es",
+    "build-module": "rm -rf lib && BABEL_ENV=module babel src -d lib",
     "build": "npm run build-browser && npm run build-module",
     "eslint": "eslint --fix --ext .js,.jsx ./src",
     "test": "jest ./tests/",
@@ -66,6 +66,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
+    "fast-async": "^6.3.8",
     "husky": "^1.1.1",
     "jest": "^23.5.0",
     "lint-staged": "^7.3.0",
@@ -83,8 +84,5 @@
     "react-vk-api"
   ],
   "author": "Maksim Markelov <mapkeji26@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "@babel/runtime": "^7.1.2"
-  }
+  "license": "MIT"
 }
