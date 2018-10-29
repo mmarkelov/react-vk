@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{128:function(e,t,n){"use strict";n.r(t);var a=n(2),o=n.n(a),c=n(95);t.default=(()=>o.a.createElement("div",{className:"App-content"},o.a.createElement("div",{style:{textAlign:"center"}},o.a.createElement("h2",null,"Ooops! Page not found"),o.a.createElement(c.a,{to:"/"},"Go Home"))))}}]);
+//# sourceMappingURL=1.61d2dba6.js.map
