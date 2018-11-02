@@ -31,12 +31,14 @@ export default class VK extends React.Component {
   state = { vk: null };
 
   componentDidMount() {
+    const { onApiAvailable } = this.props;
     if (
       typeof window !== "undefined" &&
       window.document &&
       window.document.createElement
     ) {
       this.VKinit().then(vk => {
+        onApiAvailable(vk);
         if (this._mounted) this.setState({ vk });
       });
     }
@@ -46,17 +48,15 @@ export default class VK extends React.Component {
     this._mounted = false;
   }
 
-  async VKinit() {
-    const { apiId, options, onApiAvailable } = this.props;
+  VKinit() {
+    const { apiId, options } = this.props;
 
     if (!this.vk) {
       this.vk = VKInstance || new VKApi(apiId, options);
       VKInstance = this.vk;
     }
 
-    const vk = await this.vk.init();
-    onApiAvailable(vk);
-    return vk;
+    return this.vk.init();
   }
 
   render() {

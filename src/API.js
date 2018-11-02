@@ -18,7 +18,7 @@ export default class VKApi {
     this.init();
   }
 
-  async init() {
+  init() {
     const {
       apiId,
       options: { version, onlyWidgets }
