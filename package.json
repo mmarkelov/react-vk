@@ -1,7 +1,7 @@
 {
   "name": "react-vk",
   "private": false,
-  "version": "3.5.1",
+  "version": "3.5.2",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "description": "VK API bindings for React",
