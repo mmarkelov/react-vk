@@ -2,19 +2,18 @@
   "name": "react-vk",
   "private": false,
   "version": "3.5.2",
-  "main": "./lib/index.js",
-  "module": "./es/index.js",
+  "main": "dist/react-vk.cjs.js",
+  "module": "dist/react-vk.esm.js",
+  "browser": "dist/react-vk.umd.production.min.js",
   "description": "VK API bindings for React",
   "files": [
-    "lib",
-    "es",
+    "dist",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "build-browser": "rm -rf es && BABEL_ENV=browser babel src -d es",
-    "build-module": "rm -rf lib && BABEL_ENV=module babel src -d lib",
-    "build": "npm run build-browser && npm run build-module",
+    "clear": "rm -rf dist",
+    "build": "npm run clear && NODE_ENV=development rollup -c && NODE_ENV=production rollup -c",
     "eslint": "eslint --fix --ext .js,.jsx ./src",
     "test": "jest ./tests/",
     "test:coverage": "jest --coverage ./tests/",
@@ -71,7 +70,13 @@
     "prettier": "^1.15.3",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "rollup": "^0.67.4",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-terser": "^3.0.0"
   },
   "keywords": [
     "react",
