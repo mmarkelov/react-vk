@@ -35,7 +35,9 @@ npm install --save react-vk
 yarn add react-vk
 ```
 
-## Important note!
+## Important notes!
+
+For latest release you need **react 16.6**
 
 For local projects run your server on port 80 (This is VK API requirement for local projects)
 For example using create-react-app in your package.json:
