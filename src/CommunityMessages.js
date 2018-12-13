@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class CommunityMessages extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     groupId: PropTypes.number.isRequired,
     options: PropTypes.shape({
@@ -38,7 +39,8 @@ export default class CommunityMessages extends React.Component {
   };
 
   componentDidMount() {
-    const { vk, elementId, groupId, options, onMount } = this.props;
+    const { vk } = this.context;
+    const { elementId, groupId, options, onMount } = this.props;
     const widget = vk.Widgets.CommunityMessages(elementId, groupId, options);
     onMount(widget, elementId);
   }

@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class Playlist extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     ownerId: PropTypes.number.isRequired,
     playlistId: PropTypes.number.isRequired,
@@ -24,7 +25,8 @@ export default class Playlist extends React.Component {
   }
 
   mount() {
-    const { vk, elementId, ownerId, playlistId, hash, options } = this.props;
+    const { vk } = this.context;
+    const { elementId, ownerId, playlistId, hash, options } = this.props;
     vk.Widgets.Playlist(elementId, -ownerId, playlistId, hash, options);
   }
 

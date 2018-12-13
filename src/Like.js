@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class Like extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       type: PropTypes.oneOf(["full", "button", "mini", "vertical"]),
@@ -42,7 +43,7 @@ export default class Like extends React.Component {
   }
 
   componentWillUnmount() {
-    const { vk } = this.props;
+    const { vk } = this.context;
     vk.Observer.unsubscribe("widgets.like.liked");
     vk.Observer.unsubscribe("widgets.like.unliked");
     vk.Observer.unsubscribe("widgets.like.shared");
@@ -50,8 +51,8 @@ export default class Like extends React.Component {
   }
 
   mount() {
+    const { vk } = this.context;
     const {
-      vk,
       elementId,
       options,
       pageId,

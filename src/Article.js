@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class Post extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     articleUrl: PropTypes.string.isRequired
   };
@@ -18,7 +19,8 @@ export default class Post extends React.Component {
   }
 
   mount() {
-    const { vk, elementId, articleUrl } = this.props;
+    const { vk } = this.context;
+    const { elementId, articleUrl } = this.props;
     vk.Widgets.Article(elementId, articleUrl);
   }
 

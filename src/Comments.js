@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class Comments extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -49,14 +50,14 @@ export default class Comments extends React.Component {
   }
 
   componentWillUnmount() {
-    const { vk } = this.props;
+    const { vk } = this.context;
     vk.Observer.unsubscribe("widgets.comments.new_comment");
     vk.Observer.unsubscribe("widgets.comments.delete_comment");
   }
 
   mount() {
+    const { vk } = this.context;
     const {
-      vk,
       elementId,
       options,
       pageId,

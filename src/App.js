@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class Application extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     appId: PropTypes.number.isRequired,
     options: PropTypes.shape({
@@ -25,7 +26,8 @@ export default class Application extends React.Component {
   }
 
   mount() {
-    const { vk, elementId, appId, options } = this.props;
+    const { vk } = this.context;
+    const { elementId, appId, options } = this.props;
     vk.Widgets.App(elementId, appId, options);
   }
 

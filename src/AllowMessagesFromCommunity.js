@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class AllowMessagesFromCommunity extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       height: PropTypes.number
@@ -28,12 +29,13 @@ export default class AllowMessagesFromCommunity extends React.Component {
   }
 
   componentWillUnmount() {
-    const { vk } = this.props;
+    const { vk } = this.context;
     vk.Observer.unsubscribe("widgets.allowMessagesFromCommunity.allowed");
   }
 
   mount() {
-    const { vk, elementId, options, groupId, onAllow, onDeny } = this.props;
+    const { vk } = this.context;
+    const { elementId, options, groupId, onAllow, onDeny } = this.props;
     vk.Widgets.AllowMessagesFromCommunity(elementId, options, groupId);
     vk.Observer.subscribe(
       "widgets.allowMessagesFromCommunity.allowed",

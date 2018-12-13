@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class CommentsBrowse extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -30,7 +31,8 @@ export default class CommentsBrowse extends React.Component {
   }
 
   mount() {
-    const { vk, elementId, options } = this.props;
+    const { vk } = this.context;
+    const { elementId, options } = this.props;
     vk.Widgets.CommentsBrowse(elementId, options);
   }
 

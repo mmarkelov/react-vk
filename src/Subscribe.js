@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class Subscribe extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       mode: PropTypes.number,
@@ -30,14 +31,14 @@ export default class Subscribe extends React.Component {
   }
 
   componentWillUnmount() {
-    const { vk } = this.props;
+    const { vk } = this.context;
     vk.Observer.unsubscribe("widgets.subscribed");
     vk.Observer.unsubscribe("widgets.unsubscribed");
   }
 
   mount() {
+    const { vk } = this.context;
     const {
-      vk,
       elementId,
       options,
       ownerId,

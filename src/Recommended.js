@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class Recommended extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       limit: PropTypes.number,
@@ -32,7 +33,8 @@ export default class Recommended extends React.Component {
   }
 
   mount() {
-    const { vk, elementId, options } = this.props;
+    const { vk } = this.context;
+    const { elementId, options } = this.props;
     vk.Widgets.Recommended(elementId, options);
   }
 

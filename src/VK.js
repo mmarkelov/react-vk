@@ -63,7 +63,7 @@ export default class VK extends React.Component {
     const { vk } = this.state;
     const { children } = this.props;
     return vk ? (
-      <VKContext.Provider value={vk}>{children}</VKContext.Provider>
+      <VKContext.Provider value={{ vk }}>{children}</VKContext.Provider>
     ) : null;
   }
 }

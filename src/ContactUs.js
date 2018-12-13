@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class ContactUs extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       text: PropTypes.string,
@@ -25,7 +26,8 @@ export default class ContactUs extends React.Component {
   }
 
   mount() {
-    const { vk, elementId, options, ownerId } = this.props;
+    const { vk } = this.context;
+    const { elementId, options, ownerId } = this.props;
     vk.Widgets.ContactUs(elementId, options, -ownerId);
   }
 

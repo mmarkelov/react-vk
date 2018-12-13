@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class Group extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     groupId: PropTypes.number.isRequired,
     options: PropTypes.shape({
@@ -38,13 +39,14 @@ export default class Group extends React.Component {
   }
 
   componentWillUnmount() {
-    const { vk } = this.props;
+    const { vk } = this.context;
     vk.Observer.unsubscribe("widgets.groups.joined");
     vk.Observer.unsubscribe("widgets.groups.leaved");
   }
 
   mount() {
-    const { vk, elementId, options, groupId, onJoin, onLeave } = this.props;
+    const { vk } = this.context;
+    const { elementId, options, groupId, onJoin, onLeave } = this.props;
     vk.Widgets.Group(elementId, options, groupId);
     vk.Observer.subscribe("widgets.groups.joined", onJoin);
     vk.Observer.subscribe("widgets.groups.leaved", onLeave);

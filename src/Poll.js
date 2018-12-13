@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import vkPropTypes from "./vkPropTypes";
+import VKContext from "./VKContext";
 
 export default class Poll extends React.Component {
+  static contextType = VKContext;
+
   static propTypes = {
-    vk: vkPropTypes.isRequired,
     elementId: PropTypes.string,
     options: PropTypes.shape({
       width: PropTypes.number,
@@ -25,7 +26,8 @@ export default class Poll extends React.Component {
   }
 
   mount() {
-    const { vk, elementId, options, pollId } = this.props;
+    const { vk } = this.context;
+    const { elementId, options, pollId } = this.props;
     vk.Widgets.Poll(elementId, options, pollId);
   }
 
