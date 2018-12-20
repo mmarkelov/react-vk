@@ -1,7 +1,7 @@
 {
   "name": "react-vk",
   "private": false,
-  "version": "4.0.0",
+  "version": "4.0.1",
   "main": "dist/react-vk.cjs.js",
   "module": "dist/react-vk.esm.js",
   "browser": "dist/react-vk.umd.production.min.js",
