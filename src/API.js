@@ -1,4 +1,5 @@
 /* global document, window */
+import minified from "./minified";
 
 export default class VKApi {
   constructor(apiId, options = {}) {
@@ -17,7 +18,7 @@ export default class VKApi {
   init() {
     const {
       apiId,
-      options: { version, onlyWidgets }
+      options: { version, onlyWidgets, unstable_useMinified }
     } = this;
 
     if (this.promise) return this.promise;
@@ -42,7 +43,11 @@ export default class VKApi {
 
       script.type = "text/javascript";
       script.id = "vk-openapi";
-      script.src = baseUrl;
+      if (!unstable_useMinified) {
+        script.src = baseUrl;
+      } else {
+        script.text = minified;
+      }
       script.async = true;
 
       document.head.appendChild(script);

@@ -15,7 +15,8 @@ export default class VK extends React.Component {
     apiId: PropTypes.number.isRequired,
     options: PropTypes.shape({
       version: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-      onlyWidgets: PropTypes.bool
+      onlyWidgets: PropTypes.bool,
+      unstable_useMinified: PropTypes.bool
     }),
     onApiAvailable: PropTypes.func
   };
@@ -23,7 +24,8 @@ export default class VK extends React.Component {
   static defaultProps = {
     options: {
       version: 160,
-      onlyWidgets: true
+      onlyWidgets: true,
+      unstable_useMinified: true
     },
     onApiAvailable: () => {}
   };
