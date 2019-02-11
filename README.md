@@ -5,6 +5,8 @@ bindings for React
 
 ## Install
 
+### For latest release you need **react 16.6**
+
 Depending on your `react` you need different version of package:
 `react-vk@1.1.5` for `react < 16`
 `react-vk@1.1.6` for `react > 16.2`
@@ -17,8 +19,6 @@ yarn add react-vk
 ```
 
 ## Important notes!
-
-For latest release you need **react 16.6**
 
 For local projects run your server on port 80 (This is VK API requirement for local projects)
 For example using create-react-app in your package.json:
