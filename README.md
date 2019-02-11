@@ -3,32 +3,13 @@
 [VK API](https://vk.com/dev/widgets_for_sites)
 bindings for React
 
-## Migrate from v1
-
-VK now is imported as default!
-
-### Before(v1):
-
-```js
-import { VK, ... } from 'react-vk';
-
-...
-```
-
-### After:
-
-```js
-import VK, { ... } from 'react-vk';
-
-...
-```
-
 ## Install
 
 Depending on your `react` you need different version of package:
 `react-vk@1.1.5` for `react < 16`
 `react-vk@1.1.6` for `react > 16.2`
-`react-vk` for `react > 16.3`
+`react-vk@3.5.2` for `react < 16.6`
+`react-vk` for `react > 16.6`
 
 ```shell
 npm install --save react-vk
@@ -58,7 +39,7 @@ You need run this command as administrator!
 
 ### Basic components
 
-- `<VK apiId={123456} />` - provides child components with vk. apiId - requires
+- `<VK />` - provides child components with vk
 - `<AllowMessagesFromCommunity />` - AllowMessagesFromCommunity Widget instance
 - `<Application />` - App Widget instance
 - `<Article />` - Article Widget instance
@@ -80,7 +61,8 @@ You need run this command as administrator!
 Every component has options object, which contains parameters (You can find available fields on VK API for selected widget)
 
 - `<VK apiId={number} onApiAvailable={function}/>`
-  requires apiId for init VK. More information on [VK API](https://vk.com/dev/openapi)
+  requires **apiId** for init VK, but for some components you can skip **apiId** prop. (**Application**, **Article**, **Group**, **CommunityMessages**, **Playlist**, **Post**, **Subscribe**)
+  More information on [VK API](https://vk.com/dev/openapi)
   onApiAvailable - function that provide you access to VK api instance
 
 - `<AllowMessagesFromCommunity elementId={string} options={object} groupId={number} onAllow={function} onDeny={function} />`
@@ -263,7 +245,7 @@ import VK, { Subscribe } from "react-vk";
 
 const App = () => {
   return (
-    <VK apiId={123456}>
+    <VK>
       <Subscribe
         ownerId={17437657}
         onSubscribe={() => {
@@ -309,7 +291,7 @@ class App extends Component {
     return (
     <div>
       <button onClick={this.handleClick}>Delete CommunityMessages</button>
-      <VK apiId={123456}>
+      <VK>
         <CommunityMessages
           groupId={127607773}
           onMount={(widget, id) => {
