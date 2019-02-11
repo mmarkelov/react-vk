@@ -12,7 +12,7 @@ export default class VK extends React.Component {
   _mounted = true;
 
   static propTypes = {
-    apiId: PropTypes.number.isRequired,
+    apiId: PropTypes.number,
     options: PropTypes.shape({
       version: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
       onlyWidgets: PropTypes.bool
@@ -21,6 +21,7 @@ export default class VK extends React.Component {
   };
 
   static defaultProps = {
+    apiId: null,
     options: {
       version: 160,
       onlyWidgets: true
