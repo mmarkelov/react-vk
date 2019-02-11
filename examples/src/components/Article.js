@@ -11,15 +11,15 @@ import VK, {Article} from 'react-vk';
 
 const ArticleWidget = () => {
 	return (
-	    <VK apiId={your_api_id}>
+	    <VK>
                 <Article elementId="vk_article_tassagency-mayakovskiy"
                          articleUrl="@tassagency-mayakovskiy" />
             </VK>
 	)
 };`}
     </pre>
-    <h4>Result:</h4>
-    <VK apiId={6247321}>
+    <h4>Result:</h4>s
+    <VK>
       <Article
         elementId='vk_article_tassagency-mayakovskiy'
         articleUrl='@tassagency-mayakovskiy'

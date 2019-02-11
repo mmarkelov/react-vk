@@ -5,10 +5,6 @@ export default class VKApi {
     this.apiId = apiId;
     this.options = options;
 
-    if (!apiId) {
-      throw new Error("You need to set apiId");
-    }
-
     this.promise = null;
 
     this.init();
@@ -26,10 +22,12 @@ export default class VKApi {
       const baseUrl = `https://vk.com/js/api/openapi.js?${version}`;
 
       window.vkAsyncInit = () => {
-        window.VK.init({
-          apiId,
-          onlyWidgets
-        });
+        if (apiId) {
+          window.VK.init({
+            apiId,
+            onlyWidgets
+          });
+        }
 
         resolve(window.VK);
       };

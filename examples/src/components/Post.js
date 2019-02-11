@@ -11,7 +11,7 @@ import VK, {Post} from 'react-vk';
 
 const PostWidget = () => {
 	return (
-	    <VK apiId={your_api_id}>
+	    <VK>
                 <Post ownerId={1}
                     postId={45616}
                     hash='ZMk4b98xpQZMJJRXVsL1ig' />
@@ -20,7 +20,7 @@ const PostWidget = () => {
 };`}
     </pre>
     <h4>Result:</h4>
-    <VK apiId={6247321}>
+    <VK>
       <Post ownerId={1} postId={45616} hash="ZMk4b98xpQZMJJRXVsL1ig" />
     </VK>
     <h5>
