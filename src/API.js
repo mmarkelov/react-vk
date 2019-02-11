@@ -21,18 +21,16 @@ export default class VKApi {
     this.promise = new Promise(resolve => {
       const baseUrl = `https://vk.com/js/api/openapi.js?${version}`;
 
-      if (apiId) {
-        window.vkAsyncInit = () => {
+      window.vkAsyncInit = () => {
+        if (apiId) {
           window.VK.init({
             apiId,
             onlyWidgets
           });
+        }
 
-          resolve(window.VK);
-        };
-      } else {
         resolve(window.VK);
-      }
+      };
 
       if (document.getElementById("vk-openapi")) {
         return;
