@@ -11,14 +11,14 @@ import VK, {Application} from 'react-vk';
 
 const App = () => {
 	return (
-	    <VK apiId={your_api_id}>
+	    <VK>
                 <Application appId={5327745} />
             </VK>
 	)
 };`}
     </pre>
     <h4>Result:</h4>
-    <VK apiId={6247321}>
+    <VK>
       <Application appId={5327745} />
     </VK>
     <h5>
