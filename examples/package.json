@@ -1,6 +1,6 @@
 {
   "name": "react-vk-examples",
-  "version": "4.0.1",
+  "version": "4.1.1",
   "description": "VK API bindings for React",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
