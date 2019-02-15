@@ -12,6 +12,7 @@ import Playlist from "./Playlist";
 import Poll from "./Poll";
 import Post from "./Post";
 import Recommended from "./Recommended";
+import Share from "./Share";
 import Subscribe from "./Subscribe";
 import Article from "./Article";
 
@@ -19,6 +20,7 @@ export default VK;
 
 export {
   AllowMessagesFromCommunity,
+  Article,
   Application,
   Auth,
   Comments,
@@ -32,5 +34,5 @@ export {
   Post,
   Recommended,
   Subscribe,
-  Article
+  Share
 };

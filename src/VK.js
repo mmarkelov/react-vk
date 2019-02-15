@@ -1,10 +1,11 @@
 /* eslint-disable no-underscore-dangle */
-/* global window */
 import React from "react";
 import PropTypes from "prop-types";
 
 import VKContext from "./VKContext";
 import VKApi from "./API";
+
+import { isDOMReady } from "./utils";
 
 let VKInstance = null;
 
@@ -33,11 +34,7 @@ export default class VK extends React.Component {
 
   componentDidMount() {
     const { onApiAvailable, apiId } = this.props;
-    if (
-      typeof window !== "undefined" &&
-      window.document &&
-      window.document.createElement
-    ) {
+    if (isDOMReady()) {
       this.VKinit().then(vk => {
         onApiAvailable(vk);
         if (apiId) {

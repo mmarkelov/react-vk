@@ -31,6 +31,7 @@ const components = [
   { link: '/comments', title: 'Comments' },
   { link: '/community', title: 'CommunityMessages' },
   { link: '/like', title: 'Like' },
+  { link: '/share', title: 'Share' },
   { link: '/group', title: 'Community' },
   { link: '/playlist', title: 'Playlist' },
   { link: '/contact', title: 'ContactUs' },

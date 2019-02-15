@@ -7,6 +7,7 @@ const Navigation = () => {
     { link: '/comments', title: 'Comments' },
     { link: '/community', title: 'Community Messages' },
     { link: '/like', title: 'Like' },
+    { link: '/share', title: 'Share' },
     { link: '/group', title: 'Community' },
     { link: '/playlist', title: 'Playlist' },
     { link: '/contact', title: 'Contact Us' },

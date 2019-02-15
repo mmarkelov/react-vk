@@ -54,6 +54,7 @@ You need run this command as administrator!
 - `<Poll />` - Poll Widget instance
 - `<Post />` - Post Widget instance
 - `<Recommended />` - Recommended Widget instance
+- `<Share />` - Share Widget instance
 - `<Subscribe />` - Subscribe Widget instance
 
 #### Information about components
@@ -171,6 +172,10 @@ Every component has options object, which contains parameters (You can find avai
   when user subscribes, you can use onSubscribe function; when user unsubscribes — onUnsubscribe.
   More information on [VK API](https://vk.com/dev/widget_recommended)
   https://vk.com/dev/widget_subscribe
+
+- `<Share shareOptions={object} buttonOptions={object} />`
+  You can set shareOptions and buttonOptions by object,
+  More information on [VK API](https://vk.com/dev/widget_share)
 
 ## Basic usage
 
