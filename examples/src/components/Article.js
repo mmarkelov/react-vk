@@ -18,7 +18,7 @@ const ArticleWidget = () => {
 	)
 };`}
     </pre>
-    <h4>Result:</h4>s
+    <h4>Result:</h4>
     <VK>
       <Article
         elementId='vk_article_tassagency-mayakovskiy'
