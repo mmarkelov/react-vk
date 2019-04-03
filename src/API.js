@@ -5,10 +5,6 @@ export default class VKApi {
     this.apiId = apiId;
     this.options = options;
 
-    if (!apiId) {
-      throw new Error("You need to set apiId");
-    }
-
     this.promise = null;
 
     this.init();
@@ -26,26 +22,26 @@ export default class VKApi {
       const baseUrl = `https://vk.com/js/api/openapi.js?${version}`;
 
       window.vkAsyncInit = () => {
-        window.VK.init({
-          apiId,
-          onlyWidgets
-        });
+        if (apiId) {
+          window.VK.init({
+            apiId,
+            onlyWidgets
+          });
+        }
 
         resolve(window.VK);
       };
 
-      if (document.getElementById("vk-openapi")) {
-        return;
+      if (!document.getElementById("vk-openapi")) {
+        const script = document.createElement("script");
+
+        script.type = "text/javascript";
+        script.id = "vk-openapi";
+        script.src = baseUrl;
+        script.async = true;
+
+        document.head.appendChild(script);
       }
-
-      const script = document.createElement("script");
-
-      script.type = "text/javascript";
-      script.id = "vk-openapi";
-      script.src = baseUrl;
-      script.async = true;
-
-      document.head.appendChild(script);
     });
 
     return this.promise;

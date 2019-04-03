@@ -29,7 +29,7 @@ const SubscribeToAuthor = () => {
     };
 
     return (
-        <VK apiId={your_api_id}>
+        <VK>
             <Subscribe
                 ownerId={1}
                 onSubscribe={this.handleSubscribe}
@@ -40,7 +40,7 @@ const SubscribeToAuthor = () => {
 };`}
       </pre>
       <h4>Result:</h4>
-      <VK apiId={6247321}>
+      <VK>
         <Subscribe
           ownerId={1}
           onSubscribe={handleSubscribe}

@@ -1,10 +1,11 @@
 /* eslint-disable no-underscore-dangle */
-/* global window */
 import React from "react";
 import PropTypes from "prop-types";
 
 import VKContext from "./VKContext";
 import VKApi from "./API";
+
+import { isDOMReady } from "./utils";
 
 let VKInstance = null;
 
@@ -12,7 +13,7 @@ export default class VK extends React.Component {
   _mounted = true;
 
   static propTypes = {
-    apiId: PropTypes.number.isRequired,
+    apiId: PropTypes.number,
     options: PropTypes.shape({
       version: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
       onlyWidgets: PropTypes.bool
@@ -21,6 +22,7 @@ export default class VK extends React.Component {
   };
 
   static defaultProps = {
+    apiId: null,
     options: {
       version: 160,
       onlyWidgets: true
@@ -31,14 +33,15 @@ export default class VK extends React.Component {
   state = { vk: null };
 
   componentDidMount() {
-    const { onApiAvailable } = this.props;
-    if (
-      typeof window !== "undefined" &&
-      window.document &&
-      window.document.createElement
-    ) {
+    const { onApiAvailable, apiId } = this.props;
+    if (isDOMReady()) {
       this.VKinit().then(vk => {
         onApiAvailable(vk);
+        if (apiId) {
+          vk.init({
+            apiId
+          });
+        }
         if (this._mounted) this.setState({ vk });
       });
     }

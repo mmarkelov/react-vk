@@ -11,7 +11,7 @@ import VK, {Playlist} from 'react-vk';
 
 const PlaylistWidget = () => {
 	return (
-	    <VK apiId={your_api_id}>
+	    <VK>
                 <Playlist
                     ownerId={2000002200}
                     playlistId={2200}
@@ -23,7 +23,7 @@ const PlaylistWidget = () => {
 };`}
     </pre>
     <h4>Result:</h4>
-    <VK apiId={6247321}>
+    <VK>
       <Playlist
         ownerId={2000002200}
         playlistId={2200}

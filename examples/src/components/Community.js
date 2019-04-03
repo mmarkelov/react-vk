@@ -11,15 +11,15 @@ import VK, {Group} from 'react-vk';
 
 const Community = () => {
 	return (
-	    <VK apiId={your_api_id}>
+	    <VK>
                 <Group groupId={127607773} />
             </VK>
 	)
 };`}
     </pre>
     <h4>Result:</h4>
-    <VK apiId={6247321}>
-      <Group groupId={127607773} />
+    <VK>
+      <Group groupId={20003922} />
     </VK>
     <h5>
       More info you can find on{' '}

@@ -37,11 +37,10 @@ class Messages extends React.Component {
                 <button onClick={this.handleClick}>
                     Delete CommunityMessages
                 </button>
-                <VK apiId={your_api_id}>
+                <VK>
                   <CommunityMessages
                     groupId={127607773}
-                    options={{onCanNotWrite:
-                        reason => console.log(reason)}}
+                    options={{onCanNotWrite: reason => console.log(reason)}}
                     onMount={(widget, id) => {
                         this.setState({ widget, id });
                     }}
@@ -54,7 +53,7 @@ class Messages extends React.Component {
         </pre>
         <h4>Result in right conner</h4>
         <button onClick={this.handleClick}>Delete CommunityMessages</button>
-        <VK apiId={6247321}>
+        <VK>
           <CommunityMessages
             groupId={127607773}
             options={{ onCanNotWrite: reason => console.log(reason) }}
