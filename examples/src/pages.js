@@ -1,5 +1,6 @@
 export default [
-  { link: '/login', title: 'Authorization' },
+  { link: '/', title: 'Home' },
+  { link: '/login', title: 'Login' },
   { link: '/comments', title: 'Comments' },
   { link: '/community', title: 'Community Messages' },
   { link: '/like', title: 'Like' },
