@@ -7,30 +7,42 @@ export default class VKApi {
 
     this.promise = null;
 
-    this.init();
+    this.load();
   }
 
   init() {
     const {
       apiId,
-      options: { version, onlyWidgets }
+      options: { onlyWidgets }
+    } = this;
+    if (apiId) {
+      window.VK.init({
+        apiId,
+        onlyWidgets
+      });
+    }
+  }
+
+  load() {
+    const {
+      options: { version }
     } = this;
 
     if (this.promise) return this.promise;
 
     this.promise = new Promise(resolve => {
-      const baseUrl = `https://vk.com/js/api/openapi.js?${version}`;
-
-      window.vkAsyncInit = () => {
-        if (apiId) {
-          window.VK.init({
-            apiId,
-            onlyWidgets
-          });
-        }
+      if (window.VK) {
+        this.init();
 
         resolve(window.VK);
-      };
+      } else {
+        window.vkAsyncInit = () => {
+          this.init();
+          resolve(window.VK);
+        };
+      }
+
+      const baseUrl = `https://vk.com/js/api/openapi.js?${version}`;
 
       if (!document.getElementById("vk-openapi")) {
         const script = document.createElement("script");
