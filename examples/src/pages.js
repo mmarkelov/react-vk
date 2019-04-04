@@ -1,0 +1,17 @@
+export default [
+  { link: '/login', title: 'Authorization' },
+  { link: '/comments', title: 'Comments' },
+  { link: '/community', title: 'Community Messages' },
+  { link: '/like', title: 'Like' },
+  { link: '/share', title: 'Share' },
+  { link: '/group', title: 'Community' },
+  { link: '/playlist', title: 'Playlist' },
+  { link: '/contact', title: 'Contact Us' },
+  { link: '/subscribe', title: 'Subscribe to Author' },
+  { link: '/recommend', title: 'Recommendations' },
+  { link: '/poll', title: 'Poll' },
+  { link: '/post', title: 'Post' },
+  { link: '/app', title: 'Application' },
+  { link: '/article', title: 'Article' },
+  { link: '/allow-messages-from-community', title: 'AllowMessagesFromCommunity' },
+];

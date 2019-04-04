@@ -3,9 +3,12 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import './App.css';
 
+import components from './pages';
+
 const asyncComponent = getComponent =>
   class AsyncComponent extends React.Component {
     static Component = null;
+
     state = { Component: AsyncComponent.Component };
 
     componentWillMount() {
@@ -16,6 +19,7 @@ const asyncComponent = getComponent =>
         });
       }
     }
+
     render() {
       const { Component } = this.state;
       if (Component) {
@@ -24,24 +28,6 @@ const asyncComponent = getComponent =>
       return <div className="App-content">Loading...</div>;
     }
   };
-
-const components = [
-  { link: '/', title: 'Home' },
-  { link: '/login', title: 'Login' },
-  { link: '/comments', title: 'Comments' },
-  { link: '/community', title: 'CommunityMessages' },
-  { link: '/like', title: 'Like' },
-  { link: '/share', title: 'Share' },
-  { link: '/group', title: 'Community' },
-  { link: '/playlist', title: 'Playlist' },
-  { link: '/contact', title: 'ContactUs' },
-  { link: '/subscribe', title: 'Subscribe' },
-  { link: '/recommend', title: 'Recommendations' },
-  { link: '/poll', title: 'Poll' },
-  { link: '/post', title: 'Post' },
-  { link: '/app', title: 'Application' },
-  { link: '/article', title: 'Article' }
-];
 
 const NotFound = asyncComponent(() =>
   import('./components/NotFound').then(module => module.default),
