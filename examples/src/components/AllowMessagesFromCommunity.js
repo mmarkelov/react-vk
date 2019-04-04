@@ -26,7 +26,7 @@ const AllowMessagesFromCommunityWidget = () => {
     <h5>
       More info you can find on{" "}
       <b>
-        <a href="https://vk.com/dev/AllowMessagesFromCommunity">VK API</a>
+        <a href="https://vk.com/dev/widget_allow_messages_from_community">VK API</a>
       </b>
     </h5>
   </div>
