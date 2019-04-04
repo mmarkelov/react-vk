@@ -37,7 +37,7 @@ export default class Share extends React.Component {
   };
 
   componentDidMount() {
-    if (isDOMReady()) {
+    if (isDOMReady) {
       this.mount();
     }
   }
