@@ -4,7 +4,7 @@ import VK, { AllowMessagesFromCommunity } from "react-vk";
 const AllowMessagesFromCommunityWidget = () => (
   <div className="App-content">
     <h2>AllowMessagesFromCommunityWidget Component</h2>
-    <h4>To use AllowMessagesFromCommunityWidget Widget:</h4>
+    <h4>To use AllowMessagesFromCommunityWidget:</h4>
     <pre style={{ width: "80%" }}>
       {`
 import VK, {AllowMessagesFromCommunity} from 'react-vk';

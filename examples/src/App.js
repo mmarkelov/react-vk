@@ -36,7 +36,7 @@ const NotFound = asyncComponent(() =>
 const App = () => {
   const renderRoutes = item => {
     const component = asyncComponent(() =>
-      import(`./components/${item.title}`).then(module => module.default),
+      import(`./components/${item.component}`).then(module => module.default),
     );
 
     return (
