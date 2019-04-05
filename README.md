@@ -8,6 +8,15 @@ bindings for React
 ### For latest release you need **react 16.6**
 
 Depending on your `react` you need different version of package:
+
+| react-vk      | react         |
+| ------------- |:-------------:| 
+| 1.1.5         |  < 16         | 
+| 1.1.6         | > 16.2        |
+| 3.5.2         |  between 16.2 and 16.6 |
+| current       |   16.6 |
+| next          |   16.8 |
+
 `react-vk@1.1.5` for `react < 16`
 `react-vk@1.1.6` for `react > 16.2`
 `react-vk@3.5.2` for `react < 16.6`
