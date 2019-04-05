@@ -31,9 +31,8 @@ export default class VKApi {
     if (this.promise) return this.promise;
 
     this.promise = new Promise(resolve => {
-      if (window.VK) {
+      if (window.VK && window.VK.init) {
         this.init();
-
         resolve(window.VK);
       } else {
         window.vkAsyncInit = () => {
