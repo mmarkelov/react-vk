@@ -1,38 +1,31 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import VKContext from "./VKContext";
 
-export default class Poll extends React.Component {
-  static contextType = VKContext;
+const Poll = ({ elementId, options, pollId }) => {
+  const { vk } = useContext(VKContext);
 
-  static propTypes = {
-    elementId: PropTypes.string,
-    options: PropTypes.shape({
-      width: PropTypes.number,
-      pageUrl: PropTypes.string
-    }),
-    pollId: PropTypes.string.isRequired
-  };
-
-  static defaultProps = {
-    elementId: "vk_poll",
-    options: {
-      height: 24
-    }
-  };
-
-  componentDidMount() {
-    this.mount();
-  }
-
-  mount() {
-    const { vk } = this.context;
-    const { elementId, options, pollId } = this.props;
+  useEffect(() => {
     vk.Widgets.Poll(elementId, options, pollId);
-  }
+  }, []);
 
-  render() {
-    const { elementId } = this.props;
-    return <div id={elementId} />;
+  return <div id={elementId} />;
+};
+
+Poll.propTypes = {
+  elementId: PropTypes.string,
+  options: PropTypes.shape({
+    width: PropTypes.number,
+    pageUrl: PropTypes.string
+  }),
+  pollId: PropTypes.string.isRequired
+};
+
+Poll.defaultProps = {
+  elementId: "vk_poll",
+  options: {
+    height: 24
   }
-}
+};
+
+export default Poll;
