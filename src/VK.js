@@ -20,7 +20,7 @@ const VK = ({ onApiAvailable, apiId, options, children }) => {
   }, []);
 
   return vk ? (
-    <VKContext.Provider value={{ vk }}>{children}</VKContext.Provider>
+    <VKContext.Provider value={vk}>{children}</VKContext.Provider>
   ) : null;
 };
 

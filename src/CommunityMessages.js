@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import VKContext from "./VKContext";
 
 const CommunityMessages = ({ elementId, groupId, options, onMount }) => {
-  const { vk } = useContext(VKContext);
+  const vk = useContext(VKContext);
 
   useEffect(() => {
     const widget = vk.Widgets.CommunityMessages(elementId, groupId, options);

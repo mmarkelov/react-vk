@@ -9,7 +9,7 @@ const Comments = ({
   onNewComment,
   onDeleteComment
 }) => {
-  const { vk } = useContext(VKContext);
+  const vk = useContext(VKContext);
 
   useEffect(() => {
     vk.Widgets.Comments(elementId, options, pageId);

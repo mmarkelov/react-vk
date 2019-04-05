@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import VKContext from "./VKContext";
 
 const Poll = ({ elementId, options, pollId }) => {
-  const { vk } = useContext(VKContext);
+  const vk = useContext(VKContext);
 
   useEffect(() => {
     vk.Widgets.Poll(elementId, options, pollId);

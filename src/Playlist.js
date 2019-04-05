@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import VKContext from "./VKContext";
 
 const Playlist = ({ elementId, ownerId, playlistId, hash, options }) => {
-  const { vk } = useContext(VKContext);
+  const vk = useContext(VKContext);
 
   useEffect(() => {
     vk.Widgets.Playlist(elementId, -ownerId, playlistId, hash, options);

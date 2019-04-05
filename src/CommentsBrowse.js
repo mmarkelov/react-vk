@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import VKContext from "./VKContext";
 
 const CommentsBrowse = ({ elementId, options }) => {
-  const { vk } = useContext(VKContext);
+  const vk = useContext(VKContext);
 
   useEffect(() => {
     vk.Widgets.CommentsBrowse(elementId, options);

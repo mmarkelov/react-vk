@@ -9,7 +9,7 @@ const Subscribe = ({
   onSubscribe,
   onUnsubscribe
 }) => {
-  const { vk } = useContext(VKContext);
+  const vk = useContext(VKContext);
 
   useEffect(() => {
     vk.Widgets.Subscribe(elementId, options, ownerId);

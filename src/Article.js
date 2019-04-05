@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import VKContext from "./VKContext";
 
 const Article = ({ elementId, articleUrl }) => {
-  const { vk } = useContext(VKContext);
+  const vk = useContext(VKContext);
 
   useEffect(() => {
     vk.Widgets.Article(elementId, articleUrl);

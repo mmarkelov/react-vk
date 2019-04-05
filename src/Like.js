@@ -11,7 +11,7 @@ const Like = ({
   onShare,
   onUnshare
 }) => {
-  const { vk } = useContext(VKContext);
+  const vk = useContext(VKContext);
 
   useEffect(() => {
     if (pageId) {

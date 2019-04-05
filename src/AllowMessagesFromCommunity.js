@@ -9,7 +9,7 @@ const AllowMessagesFromCommunity = ({
   onAllow,
   onDeny
 }) => {
-  const { vk } = useContext(VKContext);
+  const vk = useContext(VKContext);
 
   useEffect(() => {
     vk.Widgets.AllowMessagesFromCommunity(elementId, options, groupId);
