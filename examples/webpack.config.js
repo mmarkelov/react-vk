@@ -6,6 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const examples = path.resolve(process.cwd());
 
 const reactVK = path.resolve('../src');
+const react = path.resolve('../node_modules/react');
+const reactDOM = path.resolve('../node_modules/react-dom');
 
 const devServer = process.argv[1].indexOf('webpack-dev-server') !== -1;
 
@@ -29,6 +31,8 @@ module.exports = {
   resolve: {
     alias: {
       'react-vk': reactVK,
+      'react': react,
+      'react-dom': reactDOM
     },
   },
 

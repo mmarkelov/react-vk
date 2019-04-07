@@ -1,31 +1,24 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import VKContext from "./VKContext";
 
-export default class Post extends React.Component {
-  static contextType = VKContext;
+const Article = ({ elementId, articleUrl }) => {
+  const vk = useContext(VKContext);
 
-  static propTypes = {
-    elementId: PropTypes.string,
-    articleUrl: PropTypes.string.isRequired
-  };
-
-  static defaultProps = {
-    elementId: "vk_article"
-  };
-
-  componentDidMount() {
-    this.mount();
-  }
-
-  mount() {
-    const { vk } = this.context;
-    const { elementId, articleUrl } = this.props;
+  useEffect(() => {
     vk.Widgets.Article(elementId, articleUrl);
-  }
+  }, []);
 
-  render() {
-    const { elementId } = this.props;
-    return <div id={elementId} />;
-  }
-}
+  return <div id={elementId} />;
+};
+
+Article.propTypes = {
+  elementId: PropTypes.string,
+  articleUrl: PropTypes.string.isRequired
+};
+
+Article.defaultProps = {
+  elementId: "vk_article"
+};
+
+export default Article;

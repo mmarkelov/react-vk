@@ -1,0 +1,30 @@
+export default [
+  { link: '/', title: 'Home', component: 'Home' },
+  { link: '/login', title: 'Login', component: 'Login' },
+  { link: '/comments', title: 'Comments', component: 'Comments' },
+  {
+    link: '/community',
+    title: 'Community Messages',
+    component: 'CommunityMessages',
+  },
+  { link: '/like', title: 'Like', component: 'Like' },
+  { link: '/share', title: 'Share', component: 'Share' },
+  { link: '/group', title: 'Community', component: 'Community' },
+  { link: '/playlist', title: 'Playlist', component: 'Playlist' },
+  { link: '/contact', title: 'Contact Us', component: 'ContactUs' },
+  { link: '/subscribe', title: 'Subscribe to Author', component: 'Subscribe' },
+  {
+    link: '/recommend',
+    title: 'Recommendations',
+    component: 'Recommendations',
+  },
+  { link: '/poll', title: 'Poll', component: 'Poll' },
+  { link: '/post', title: 'Post', component: 'Post' },
+  { link: '/app', title: 'Application', component: 'Application' },
+  { link: '/article', title: 'Article', component: 'Article' },
+  {
+    link: '/allow-messages-from-community',
+    title: 'Allow Messages From Community',
+    component: 'AllowMessagesFromCommunity',
+  },
+];

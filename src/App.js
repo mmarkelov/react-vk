@@ -1,38 +1,31 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import VKContext from "./VKContext";
 
-export default class Application extends React.Component {
-  static contextType = VKContext;
+const Application = ({ elementId, appId, options }) => {
+  const vk = useContext(VKContext);
 
-  static propTypes = {
-    elementId: PropTypes.string,
-    appId: PropTypes.number.isRequired,
-    options: PropTypes.shape({
-      mode: PropTypes.oneOf([1, 2, 3]),
-      height: PropTypes.number
-    })
-  };
-
-  static defaultProps = {
-    elementId: "vk_app",
-    options: {
-      mode: 1
-    }
-  };
-
-  componentDidMount() {
-    this.mount();
-  }
-
-  mount() {
-    const { vk } = this.context;
-    const { elementId, appId, options } = this.props;
+  useEffect(() => {
     vk.Widgets.App(elementId, appId, options);
-  }
+  }, []);
 
-  render() {
-    const { elementId } = this.props;
-    return <div id={elementId} />;
+  return <div id={elementId} />;
+};
+
+Application.propTypes = {
+  elementId: PropTypes.string,
+  appId: PropTypes.number.isRequired,
+  options: PropTypes.shape({
+    mode: PropTypes.oneOf([1, 2, 3]),
+    height: PropTypes.number
+  })
+};
+
+Application.defaultProps = {
+  elementId: "vk_app",
+  options: {
+    mode: 1
   }
-}
+};
+
+export default Application;
