@@ -5,7 +5,7 @@ bindings for React
 
 ## Install
 
-### For latest release you need **react 16.6**
+### For latest release you need **react 16.8**
 
 Depending on your `react` you need different version of package:
 
