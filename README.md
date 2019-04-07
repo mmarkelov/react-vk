@@ -14,13 +14,8 @@ Depending on your `react` you need different version of package:
 | 1.1.5         |  < 16         | 
 | 1.1.6         | > 16.2        |
 | 3.5.2         |  between 16.2 and 16.6 |
-| current       |   16.6 |
-| next          |   16.8 |
-
-`react-vk@1.1.5` for `react < 16`
-`react-vk@1.1.6` for `react > 16.2`
-`react-vk@3.5.2` for `react < 16.6`
-`react-vk` for `react > 16.6`
+| 4.2.0         |   16.6 |
+| 5.0.0         |   16.8 |
 
 ```shell
 npm install --save react-vk
@@ -332,6 +327,7 @@ Also you can check them [here](https://mmarkelov.github.io/react-vk/)
 ## TODO
 
 - [ ] Add more tests
+- [ ] Add custom hooks
 
 ## Acknowledgements
 
